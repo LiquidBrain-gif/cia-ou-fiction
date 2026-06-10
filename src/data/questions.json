@@ -3,7 +3,7 @@
     "id": "cia-001",
     "type": "cia",
     "phrase": "Implanter un microphone et un émetteur radio dans un chat vivant pour qu'il s'approche discrètement de cibles et capte leurs conversations.",
-    "explication": "Projet « Acoustic Kitty » des années 1960 : la CIA a réellement opéré un chat équipé d'un micro, d'un émetteur et d'une antenne dans la queue. Le programme, très coûteux, fut abandonné après des résultats peu concluants.",
+    "explication": "Projet « Acoustic Kitty » des années 1960 : la CIA a réellement opéré un chat équipé d'un micro, d'un émetteur et d'une antenne dans la queue. Le programme, très coûteux, fut abandonné après des résultats peu concluants, notamment la mort du chat renversé par un taxi dès les premières minutes du déploiement.",
     "source": "https://en.wikipedia.org/wiki/Acoustic_Kitty",
     "_example": true
   },
@@ -20,65 +20,303 @@
     "type": "cia",
     "phrase": "Entraîner des individus à la « vision à distance » pour espionner des sites ennemis par la seule force de l'esprit.",
     "explication": "« Stargate Project » : programme américain (CIA/DIA) d'étude de la perception extrasensorielle et de la vision à distance, actif jusqu'en 1995, puis clos faute de résultats exploitables.",
-    "source": "https://en.wikipedia.org/wiki/Stargate_Project",
+    "source": "https://fr.wikipedia.org/wiki/Projet_Stargate",
     "_example": true
   },
-  { "id": "cia-004", "type": "cia", "phrase": "[À REMPLIR — phrase CIA]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — lien Wikipédia]" },
-  { "id": "cia-005", "type": "cia", "phrase": "[À REMPLIR — phrase CIA]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — lien Wikipédia]" },
-  { "id": "cia-006", "type": "cia", "phrase": "[À REMPLIR — phrase CIA]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — lien Wikipédia]" },
-  { "id": "cia-007", "type": "cia", "phrase": "[À REMPLIR — phrase CIA]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — lien Wikipédia]" },
-  { "id": "cia-008", "type": "cia", "phrase": "[À REMPLIR — phrase CIA]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — lien Wikipédia]" },
-  { "id": "cia-009", "type": "cia", "phrase": "[À REMPLIR — phrase CIA]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — lien Wikipédia]" },
-  { "id": "cia-010", "type": "cia", "phrase": "[À REMPLIR — phrase CIA]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — lien Wikipédia]" },
-  { "id": "cia-011", "type": "cia", "phrase": "[À REMPLIR — phrase CIA]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — lien Wikipédia]" },
-  { "id": "cia-012", "type": "cia", "phrase": "[À REMPLIR — phrase CIA]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — lien Wikipédia]" },
-  { "id": "cia-013", "type": "cia", "phrase": "[À REMPLIR — phrase CIA]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — lien Wikipédia]" },
-  { "id": "cia-014", "type": "cia", "phrase": "[À REMPLIR — phrase CIA]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — lien Wikipédia]" },
-  { "id": "cia-015", "type": "cia", "phrase": "[À REMPLIR — phrase CIA]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — lien Wikipédia]" },
-  { "id": "cia-016", "type": "cia", "phrase": "[À REMPLIR — phrase CIA]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — lien Wikipédia]" },
-  { "id": "cia-017", "type": "cia", "phrase": "[À REMPLIR — phrase CIA]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — lien Wikipédia]" },
-  { "id": "cia-018", "type": "cia", "phrase": "[À REMPLIR — phrase CIA]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — lien Wikipédia]" },
-  { "id": "cia-019", "type": "cia", "phrase": "[À REMPLIR — phrase CIA]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — lien Wikipédia]" },
-  { "id": "cia-020", "type": "cia", "phrase": "[À REMPLIR — phrase CIA]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — lien Wikipédia]" },
+  {
+    "id": "cia-004",
+    "type": "cia",
+    "phrase": "Administrer du LSD et d'autres substances à des sujets, parfois sans leur consentement, pour étudier les possibilités de contrôle du comportement humain.",
+    "explication": "Projet « MKUltra » de la CIA (années 1950-1970) : vaste programme d'expérimentations sur le contrôle mental, dont l'essentiel des archives fut détruit en 1973, révélé par la commission Church en 1975.",
+    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/Projet_MK-Ultra",
+    "_example": true
+  },
+  {
+    "id": "cia-005",
+    "type": "cia",
+    "phrase": "Mettre au point des méthodes d'interrogatoire combinant drogues, hypnose et privation sensorielle pour obtenir des aveux ou créer des agents sous contrôle.",
+    "explication": "Projet « Artichoke » (1951), précurseur de MKUltra, consacré aux techniques d'interrogatoire « spéciales » et au contrôle de l'esprit.",
+    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/Projet_Artichoke",
+    "_example": true
+  },
+  {
+    "id": "cia-006",
+    "type": "cia",
+    "phrase": "Aménager des appartements discrets où des inconnus, attirés sur place, étaient drogués à leur insu puis observés derrière un miroir sans tain.",
+    "explication": "« Operation Midnight Climax », sous-programme de MKUltra : la CIA a observé les effets du LSD sur des sujets non consentants dans des planques de San Francisco et New York.",
+    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/Opération_Midnight_Climax",
+    "_example": true
+  },
+  {
+    "id": "cia-007",
+    "type": "cia",
+    "phrase": "Construire un navire civil géant, sous couvert d'exploitation minière des fonds marins financée par un milliardaire, pour renflouer en secret un sous-marin soviétique coulé.",
+    "explication": "« Project Azorian » (1974) : à l'aide du Hughes Glomar Explorer, la CIA a tenté de récupérer le sous-marin soviétique K-129 par environ 5 000 m de fond. À l'origine de la formule « we can neither confirm nor deny ».",
+    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/Projet_Azorian",
+    "_example": true
+  },
+  {
+    "id": "cia-008",
+    "type": "cia",
+    "phrase": "Photographier le territoire adverse depuis l'espace et larguer les pellicules dans des capsules récupérées en plein vol par des avions.",
+    "explication": "Programme « Corona » (1959-1972) : les premiers satellites de reconnaissance américains, dont les films étaient rapatriés dans des capsules attrapées en vol au-dessus du Pacifique.",
+    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/Corona_(satellite)",
+    "_example": true
+  },
+  {
+    "id": "cia-009",
+    "type": "cia",
+    "phrase": "Développer un avion-espion volant à plus de trois fois la vitesse du son et à très haute altitude pour échapper aux missiles ennemis.",
+    "explication": "Le Lockheed A-12 « Oxcart », avion de reconnaissance de la CIA conçu par les Skunk Works, ancêtre du SR-71 Blackbird.",
+    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/Lockheed_A-12",
+    "_example": true
+  },
+  {
+    "id": "cia-010",
+    "type": "cia",
+    "phrase": "Constituer un stock secret de poisons et concevoir un pistolet tirant un dard glacé quasi indétectable, censé provoquer une crise cardiaque.",
+    "explication": "Projet « MKNAOMI » : développement et stockage d'agents biologiques et toxiques par la CIA. Le « heart attack gun » fut présenté lors des auditions de la commission Church en 1975.",
+    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/MKNAOMI",
+    "_example": true
+  },
+  {
+    "id": "cia-011",
+    "type": "cia",
+    "phrase": "Concevoir un drone de reconnaissance ayant l'apparence d'un oiseau pour survoler discrètement des sites sensibles.",
+    "explication": "Projet « Aquiline » (fin des années 1960) : drone biomimétique imitant un oiseau, étudié par la CIA pour la collecte de renseignement. Documentation publique limitée.",
+    "source": "[À VÉRIFIER] https://en.wikipedia.org/wiki/Project_Aquiline (pas de page FR probable)",
+    "_example": true
+  },
+  {
+    "id": "cia-012",
+    "type": "cia",
+    "phrase": "Tenter d'éliminer un chef d'État étranger à l'aide d'un cigare piégé, d'une combinaison de plongée contaminée et de produits destinés à faire tomber sa barbe.",
+    "explication": "Tentatives d'assassinat de Fidel Castro, notamment dans le cadre de l'« Operation Mongoose ». Ces projets rocambolesques ont été confirmés par la commission Church (1975).",
+    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/Opération_Mongoose",
+    "_example": true
+  },
+  {
+    "id": "cia-013",
+    "type": "cia",
+    "phrase": "Creuser un tunnel secret sous la frontière d'une ville divisée pour se brancher sur les câbles téléphoniques de l'adversaire.",
+    "explication": "« Operation Gold » (1955) : tunnel CIA/MI6 sous Berlin-Est pour intercepter les communications soviétiques. L'opération était en réalité connue des Soviétiques via la taupe George Blake.",
+    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/Opération_Gold",
+    "_example": true
+  },
+  {
+    "id": "cia-014",
+    "type": "cia",
+    "phrase": "Déposer des agents par parachute sur une station polaire abandonnée puis les récupérer en vol grâce à un système de câble et de ballon.",
+    "explication": "« Project Coldfeet » (1962) : des agents américains ont inspecté une station dérivante soviétique abandonnée dans l'Arctique, exfiltrés par le système Fulton (« skyhook »). Documentation publique limitée.",
+    "source": "[À VÉRIFIER] https://en.wikipedia.org/wiki/Project_Coldfeet (pas de page FR probable)",
+    "_example": true
+  },
+  {
+    "id": "cia-015",
+    "type": "cia",
+    "phrase": "Orchestrer en secret le renversement d'un gouvernement étranger élu, par la propagande, la corruption et le financement de manifestations.",
+    "explication": "« Operation Ajax » (TPAJAX, 1953) : coup d'État organisé par la CIA et le MI6 contre le Premier ministre iranien Mohammad Mossadegh.",
+    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/Coup_d'État_de_1953_en_Iran",
+    "_example": true
+  },
+  {
+    "id": "cia-016",
+    "type": "cia",
+    "phrase": "Renverser un président élu à l'aide d'une fausse armée rebelle et d'une station de radio clandestine diffusant de fausses nouvelles.",
+    "explication": "« Operation PBSuccess » (1954) : opération de la CIA ayant abouti au renversement du président guatémaltèque Jacobo Árbenz.",
+    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/Coup_d'État_de_1954_au_Guatemala",
+    "_example": true
+  },
+  {
+    "id": "cia-017",
+    "type": "cia",
+    "phrase": "Exploiter une compagnie aérienne d'apparence ordinaire servant en réalité de couverture à des opérations de transport clandestines en zone de guerre.",
+    "explication": "« Air America » : compagnie aérienne secrètement détenue par la CIA, très active en Asie du Sud-Est pendant la guerre du Vietnam.",
+    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/Air_America_(compagnie_aérienne)",
+    "_example": true
+  },
+  {
+    "id": "cia-018",
+    "type": "cia",
+    "phrase": "Surveiller illégalement, sur le sol national, les militants pacifistes et les journalistes opposés à la guerre.",
+    "explication": "« Operation CHAOS » (années 1960-1970) : programme de surveillance intérieure de la CIA visant le mouvement anti-guerre, pourtant hors de son mandat (limité à l'étranger).",
+    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/Opération_CHAOS",
+    "_example": true
+  },
+  {
+    "id": "cia-019",
+    "type": "cia",
+    "phrase": "Faire voler très haut un avion de reconnaissance au-dessus du territoire adverse, jusqu'à ce que l'un d'eux soit abattu et déclenche une crise diplomatique.",
+    "explication": "Programme « U-2 » : avion-espion de la CIA. L'appareil de Gary Powers, abattu au-dessus de l'URSS en 1960, provoqua une grave crise diplomatique.",
+    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/Lockheed_U-2",
+    "_example": true
+  },
+  {
+    "id": "cia-020",
+    "type": "cia",
+    "phrase": "Compiler en interne un rapport secret recensant les activités illégales de l'agence : écoutes, filatures et projets d'assassinat.",
+    "explication": "Les « Family Jewels » : rapport interne de la CIA (1973) listant ses activités illégales, déclassifié en 2007.",
+    "source": "[À VÉRIFIER] https://en.wikipedia.org/wiki/Family_Jewels_(Central_Intelligence_Agency) (page FR à confirmer)",
+    "_example": true
+  },
   {
     "id": "fic-001",
     "type": "fiction",
-    "phrase": "Lancer trois héliporteurs géants reliés à un réseau de satellites pour éliminer préventivement des millions de cibles désignées par un algorithme.",
-    "explication": "Plan « Project Insight » de l'organisation Hydra dans le film Captain America: Le Soldat de l'hiver (2014). Pure fiction du Marvel Cinematic Universe.",
+    "phrase": "Mettre en orbite une flotte d'aéronefs lourdement armés, reliés à un algorithme prédictif, chargés d'identifier et d'éliminer par anticipation les individus considérés comme de futures menaces.",
+    "explication": "Plan « Project Insight » de l'organisation Hydra dans Captain America: Le Soldat de l'hiver (2014). Pure fiction du Marvel Cinematic Universe.",
     "source": "Captain America: Le Soldat de l'hiver (Marvel, 2014)",
     "_example": true
   },
   {
     "id": "fic-002",
     "type": "fiction",
-    "phrase": "Une souris de laboratoire surdouée élabore chaque nuit un nouveau plan farfelu pour conquérir le monde, aidée par un comparse écervelé.",
-    "explication": "Minus et Cortex (Pinky and the Brain), série d'animation Warner Bros. (1995). Personnages entièrement fictifs.",
-    "source": "Minus et Cortex (Pinky and the Brain), Warner Bros., 1995",
+    "phrase": "Distribuer gratuitement à toute la population des cartes SIM émettant un signal capable de déclencher des accès de violence incontrôlable, afin de réduire le nombre d'habitants de la planète.",
+    "explication": "Plan de Richmond Valentine dans Kingsman: Services secrets (2014). Pure fiction.",
+    "source": "Kingsman: Services secrets (2014)",
     "_example": true
   },
   {
     "id": "fic-003",
     "type": "fiction",
-    "phrase": "Rejeté comme apprenti héros, un inventeur vend secrètement des armes futuristes puis met en scène une attaque de robot géant pour se faire acclamer en sauveur.",
-    "explication": "Plan de Syndrome (Buddy Pine) dans le film d'animation Les Indestructibles (The Incredibles, Pixar, 2004). Pure fiction.",
-    "source": "Les Indestructibles (The Incredibles), Pixar, 2004",
+    "phrase": "Prendre le contrôle d'un réseau de satellites de régulation du climat pour provoquer à volonté tempêtes, gels et catastrophes naturelles sur des cibles précises.",
+    "explication": "Intrigue du film Geostorm (2017) : un réseau de satellites censé maîtriser le climat est détourné comme arme. Pure fiction.",
+    "source": "Geostorm (2017)",
     "_example": true
   },
-  { "id": "fic-004", "type": "fiction", "phrase": "[À REMPLIR — phrase plan fictif]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — titre de l'œuvre]" },
-  { "id": "fic-005", "type": "fiction", "phrase": "[À REMPLIR — phrase plan fictif]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — titre de l'œuvre]" },
-  { "id": "fic-006", "type": "fiction", "phrase": "[À REMPLIR — phrase plan fictif]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — titre de l'œuvre]" },
-  { "id": "fic-007", "type": "fiction", "phrase": "[À REMPLIR — phrase plan fictif]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — titre de l'œuvre]" },
-  { "id": "fic-008", "type": "fiction", "phrase": "[À REMPLIR — phrase plan fictif]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — titre de l'œuvre]" },
-  { "id": "fic-009", "type": "fiction", "phrase": "[À REMPLIR — phrase plan fictif]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — titre de l'œuvre]" },
-  { "id": "fic-010", "type": "fiction", "phrase": "[À REMPLIR — phrase plan fictif]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — titre de l'œuvre]" },
-  { "id": "fic-011", "type": "fiction", "phrase": "[À REMPLIR — phrase plan fictif]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — titre de l'œuvre]" },
-  { "id": "fic-012", "type": "fiction", "phrase": "[À REMPLIR — phrase plan fictif]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — titre de l'œuvre]" },
-  { "id": "fic-013", "type": "fiction", "phrase": "[À REMPLIR — phrase plan fictif]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — titre de l'œuvre]" },
-  { "id": "fic-014", "type": "fiction", "phrase": "[À REMPLIR — phrase plan fictif]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — titre de l'œuvre]" },
-  { "id": "fic-015", "type": "fiction", "phrase": "[À REMPLIR — phrase plan fictif]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — titre de l'œuvre]" },
-  { "id": "fic-016", "type": "fiction", "phrase": "[À REMPLIR — phrase plan fictif]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — titre de l'œuvre]" },
-  { "id": "fic-017", "type": "fiction", "phrase": "[À REMPLIR — phrase plan fictif]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — titre de l'œuvre]" },
-  { "id": "fic-018", "type": "fiction", "phrase": "[À REMPLIR — phrase plan fictif]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — titre de l'œuvre]" },
-  { "id": "fic-019", "type": "fiction", "phrase": "[À REMPLIR — phrase plan fictif]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — titre de l'œuvre]" },
-  { "id": "fic-020", "type": "fiction", "phrase": "[À REMPLIR — phrase plan fictif]", "explication": "[À REMPLIR]", "source": "[À REMPLIR — titre de l'œuvre]" }
+  {
+    "id": "fic-004",
+    "type": "fiction",
+    "phrase": "Vaporiser dans le réseau d'eau potable d'une grande ville une substance psychotrope provoquant des crises de terreur de masse et l'effondrement de l'ordre social.",
+    "explication": "Plan de la Ligue des Ombres (Ra's al Ghul) dans Batman Begins (2005). Pure fiction.",
+    "source": "Batman Begins (2005)",
+    "_example": true
+  },
+  {
+    "id": "fic-005",
+    "type": "fiction",
+    "phrase": "Conditionner psychologiquement des soldats capturés pour en faire des assassins « dormants », activables à distance par un simple mot-code.",
+    "explication": "Intrigue du film Un crime dans la tête (The Manchurian Candidate, 1962). Pure fiction — souvent rapprochée, à tort, des expériences réelles de la CIA.",
+    "source": "Un crime dans la tête (The Manchurian Candidate, 1962)",
+    "_example": true
+  },
+  {
+    "id": "fic-006",
+    "type": "fiction",
+    "phrase": "Orchestrer une fausse catastrophe attribuée à une menace extérieure afin d'unir les nations rivales et d'éviter une guerre imminente.",
+    "explication": "Plan d'Adrian Veidt (Ozymandias) dans Watchmen (comics 1986, film 2009). Pure fiction.",
+    "source": "Watchmen (2009)",
+    "_example": true
+  },
+  {
+    "id": "fic-007",
+    "type": "fiction",
+    "phrase": "Détourner une arme orbitale capable d'émettre une impulsion électromagnétique pour paralyser les systèmes électroniques d'un pays et effacer ses archives financières.",
+    "explication": "Intrigue du film GoldenEye (1995), avec le satellite-arme du même nom. Pure fiction.",
+    "source": "GoldenEye (James Bond, 1995)",
+    "_example": true
+  },
+  {
+    "id": "fic-008",
+    "type": "fiction",
+    "phrase": "Déclencher l'effondrement coordonné des réseaux financiers, de transport et d'énergie d'un pays par une série de cyberattaques en cascade.",
+    "explication": "La « braderie » (fire sale) du film Die Hard 4 / Retour en enfer (2007). Pure fiction.",
+    "source": "Die Hard 4 — Retour en enfer (2007)",
+    "_example": true
+  },
+  {
+    "id": "fic-009",
+    "type": "fiction",
+    "phrase": "Mettre en place un dispositif prédictif permettant d'arrêter des individus pour des crimes qu'ils n'ont pas encore commis.",
+    "explication": "Intrigue du film Minority Report (2002), adapté d'une nouvelle de Philip K. Dick. Pure fiction.",
+    "source": "Minority Report (2002)",
+    "_example": true
+  },
+  {
+    "id": "fic-010",
+    "type": "fiction",
+    "phrase": "Disperser depuis une station orbitale une toxine mortelle pour éliminer la population de la Terre et la remplacer par une élite sélectionnée.",
+    "explication": "Plan de Hugo Drax dans Moonraker (1979). Pure fiction.",
+    "source": "Moonraker (James Bond, 1979)",
+    "_example": true
+  },
+  {
+    "id": "fic-011",
+    "type": "fiction",
+    "phrase": "Fabriquer de toutes pièces une guerre fictive, mise en scène pour les caméras, afin de détourner l'attention de l'opinion publique d'un scandale.",
+    "explication": "Intrigue du film Des hommes d'influence (Wag the Dog, 1997). Pure fiction.",
+    "source": "Des hommes d'influence (Wag the Dog, 1997)",
+    "_example": true
+  },
+  {
+    "id": "fic-012",
+    "type": "fiction",
+    "phrase": "Dissimuler dans les publicités et les programmes télévisés des messages subliminaux ordonnant à la population d'obéir, de consommer et de ne pas se révolter.",
+    "explication": "Intrigue du film Invasion Los Angeles (They Live, 1988) de John Carpenter. Pure fiction.",
+    "source": "Invasion Los Angeles (They Live, 1988)",
+    "_example": true
+  },
+  {
+    "id": "fic-013",
+    "type": "fiction",
+    "phrase": "Élever en secret un individu, depuis sa naissance et à son insu, dans un environnement entièrement mis en scène et placé sous surveillance permanente.",
+    "explication": "Intrigue du film The Truman Show (1998). Pure fiction.",
+    "source": "The Truman Show (1998)",
+    "_example": true
+  },
+  {
+    "id": "fic-014",
+    "type": "fiction",
+    "phrase": "Administrer une drogue expérimentale à des volontaires d'une université afin d'induire des capacités paranormales, transmissibles à leur descendance.",
+    "explication": "Point de départ du roman Charlie (Firestarter, Stephen King, 1980) et de son adaptation : l'agence secrète « La Boutique » mène ces expériences. Pure fiction.",
+    "source": "Charlie (Firestarter, Stephen King, 1980)",
+    "_example": true
+  },
+  {
+    "id": "fic-015",
+    "type": "fiction",
+    "phrase": "Connecter une intelligence artificielle à l'ensemble des caméras et communications d'un pays pour prédire les actes de violence avant qu'ils ne surviennent.",
+    "explication": "« La Machine » de la série Person of Interest (2011-2016). Pure fiction.",
+    "source": "Person of Interest (série, 2011)",
+    "_example": true
+  },
+  {
+    "id": "fic-016",
+    "type": "fiction",
+    "phrase": "Fusionner les services de renseignement de plusieurs nations en un réseau unique de surveillance de masse, secrètement contrôlé par une organisation criminelle.",
+    "explication": "Le programme « Nine Eyes » dans le film 007 Spectre (2015). Pure fiction.",
+    "source": "007 Spectre (2015)",
+    "_example": true
+  },
+  {
+    "id": "fic-017",
+    "type": "fiction",
+    "phrase": "Pénétrer les rêves d'une cible à l'aide d'un dispositif partagé pour y implanter une idée qu'elle croira ensuite être la sienne.",
+    "explication": "Intrigue du film Inception (2010). Pure fiction.",
+    "source": "Inception (2010)",
+    "_example": true
+  },
+  {
+    "id": "fic-018",
+    "type": "fiction",
+    "phrase": "Relier de force un individu doté de télépathie à une machine afin de localiser et neutraliser à distance une catégorie entière de personnes.",
+    "explication": "Plan de William Stryker utilisant Cérébro dans X-Men 2 (2003). Pure fiction.",
+    "source": "X-Men 2 (2003)",
+    "_example": true
+  },
+  {
+    "id": "fic-019",
+    "type": "fiction",
+    "phrase": "Recruter et reprogrammer par conditionnement comportemental des agents pour en faire des assassins d'élite, sans mémoire de leur passé ni état d'âme.",
+    "explication": "Le programme « Treadstone » dans La Mémoire dans la peau (The Bourne Identity, 2002). Pure fiction.",
+    "source": "La Mémoire dans la peau (The Bourne Identity, 2002)",
+    "_example": true
+  },
+  {
+    "id": "fic-020",
+    "type": "fiction",
+    "phrase": "Implanter de faux souvenirs dans l'esprit d'agents pour leur fabriquer une identité de couverture qu'ils croient authentique.",
+    "explication": "Intrigue du film Total Recall (1990), adapté d'une nouvelle de Philip K. Dick. Pure fiction.",
+    "source": "Total Recall (1990)",
+    "_example": true
+  }
 ]
