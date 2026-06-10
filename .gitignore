@@ -18,6 +18,9 @@ terraform.rc
 .aws/
 credentials
 
+# Config locale de l'outillage
+.claude/
+
 # OS / éditeurs
 .DS_Store
 Thumbs.db

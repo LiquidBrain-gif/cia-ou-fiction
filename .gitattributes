@@ -1,0 +1,6 @@
+# Force les fins de ligne LF pour les scripts shell (sinon CRLF casse bash).
+*.sh text eol=lf
+deploy.sh text eol=lf
+
+# Normalisation par défaut
+* text=auto
