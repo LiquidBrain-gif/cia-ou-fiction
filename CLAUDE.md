@@ -47,7 +47,7 @@ Aucun backend, aucune base de données.
 │   ├── index.html
 │   ├── style.css       # thème « DOSSIER DÉCLASSIFIÉ »
 │   ├── app.js          # logique + mode test + sons
-│   └── data/questions.json   # 126 questions (63 cia + 63 fiction)
+│   └── data/questions.json   # 148 questions (74 cia + 74 fiction)
 └── infra/              # Terraform (main/variables/outputs/versions)
 ```
 
@@ -69,7 +69,7 @@ Aucun backend, aucune base de données.
 
 ## 5. Données — src/data/questions.json
 
-- 126 objets : `cia-001..063` (type `cia`) + `fic-001..063` (type `fiction`).
+- 148 objets : `cia-001..074` (type `cia`) + `fic-001..074` (type `fiction`).
   Pool **équilibré 50/50** ; toutes les opérations CIA sont réelles, à URL Wikipédia
   **vérifiée en HTTP** (FR priorité). Pour en ajouter : vérifier l'existence de la
   page avant de committer ; ne jamais inventer.
@@ -122,7 +122,7 @@ contient `.lives`), `#phrase`, `#choices`, `#btn-cia`, `#btn-fiction`, `#result`
 ## 8. État d'avancement
 
 - [x] Front complet (jeu 3 vies, persistance + record, mode test, sons).
-- [x] 126 questions (63 CIA réelles à URL vérifiée + 63 fictions confondables), pool 50/50.
+- [x] 148 questions (74 CIA réelles à URL vérifiée + 74 fictions confondables), pool 50/50.
 - [x] Infra Terraform + deploy.sh + serve.ps1.
 - [x] README.md + RECAP.md.
 - [x] Dépôt GitHub + site S3 en ligne.

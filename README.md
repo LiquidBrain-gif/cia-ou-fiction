@@ -64,7 +64,7 @@ S3 bucket (static website hosting, us-east-1, lecture publique)
 │   ├── app.js
 │   ├── fonts/                # polices embarquées (Special Elite, IBM Plex Mono)
 │   └── data/
-│       └── questions.json    # les 126 questions (63 CIA + 63 fiction)
+│       └── questions.json    # les 148 questions (74 CIA + 74 fiction)
 └── infra/                    # Terraform
     ├── main.tf
     ├── variables.tf
@@ -144,7 +144,7 @@ relancez `./deploy.sh`. C'est tout.
 ## ✏️ Ajouter / éditer des questions
 
 Toutes les questions vivent dans **`src/data/questions.json`** : un tableau
-d'objets **équilibré** entre `cia` et `fiction` (actuellement 63 + 63 = 126).
+d'objets **équilibré** entre `cia` et `fiction` (actuellement 74 + 74 = 148).
 
 ```json
 {

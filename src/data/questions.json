@@ -504,6 +504,94 @@
     "_example": true
   },
   {
+    "id": "cia-064",
+    "type": "cia",
+    "phrase": "Infiltrer par vedette rapide des agents le long de côtes baltes pour soutenir des maquis — sans savoir que l'ennemi a tout retourné.",
+    "explication": "Opération Jungle : infiltration d'agents dans les pays baltes par la CIA et le MI6 au début des années 1950, largement compromise par les services soviétiques.",
+    "source": "https://fr.wikipedia.org/wiki/Opération_Jungle",
+    "_example": true
+  },
+  {
+    "id": "cia-065",
+    "type": "cia",
+    "phrase": "Financer et armer un mouvement de résistance clandestin dans un pays de l'Est… qui s'avère en réalité entièrement piloté par l'adversaire.",
+    "explication": "Affaire WiN (« Liberté et Indépendance ») : la CIA et le MI6 ont financé une fausse résistance polonaise en réalité contrôlée par les services soviétiques.",
+    "source": "https://en.wikipedia.org/wiki/Freedom_and_Independence",
+    "_example": true
+  },
+  {
+    "id": "cia-066",
+    "type": "cia",
+    "phrase": "Aménager une base aérienne ultrasecrète au milieu d'un désert pour y mettre au point et tester des avions-espions, à l'abri des regards.",
+    "explication": "Zone 51 : base d'essais ultrasecrète aménagée par la CIA dès 1955 pour développer l'avion-espion U-2, puis l'A-12.",
+    "source": "https://fr.wikipedia.org/wiki/Zone_51",
+    "_example": true
+  },
+  {
+    "id": "cia-067",
+    "type": "cia",
+    "phrase": "Créer un fonds d'investissement discret pour financer des start-up technologiques susceptibles de servir l'espionnage.",
+    "explication": "In-Q-Tel : société de capital-risque créée par la CIA en 1999 pour investir dans des technologies utiles au renseignement.",
+    "source": "https://fr.wikipedia.org/wiki/In-Q-Tel",
+    "_example": true
+  },
+  {
+    "id": "cia-068",
+    "type": "cia",
+    "phrase": "Exploiter une compagnie aérienne d'apparence commerciale pour des missions de ravitaillement clandestines au-dessus de l'Asie.",
+    "explication": "Civil Air Transport : compagnie aérienne secrètement détenue par la CIA, active en Asie dès les années 1950, ancêtre d'Air America.",
+    "source": "https://fr.wikipedia.org/wiki/Civil_Air_Transport",
+    "_example": true
+  },
+  {
+    "id": "cia-069",
+    "type": "cia",
+    "phrase": "Entraîner et armer en secret des combattants d'une ethnie montagnarde pour mener une guerre parallèle dans un petit pays d'Asie du Sud-Est.",
+    "explication": "Opération Momentum : programme de la CIA armant les Hmong au Laos durant la « guerre secrète » des années 1960.",
+    "source": "https://en.wikipedia.org/wiki/Operation_Momentum",
+    "_example": true
+  },
+  {
+    "id": "cia-070",
+    "type": "cia",
+    "phrase": "Exploiter une prison secrète, à l'écart de tout regard, pour y détenir et interroger durement des prisonniers.",
+    "explication": "« Salt Pit » : prison secrète (site noir) de la CIA en Afghanistan, tristement célèbre pour la mort d'un détenu.",
+    "source": "https://en.wikipedia.org/wiki/Salt_Pit",
+    "_example": true
+  },
+  {
+    "id": "cia-071",
+    "type": "cia",
+    "phrase": "Soutenir en secret les restes d'une armée nationaliste réfugiée dans la jungle, au risque d'alimenter un trafic de stupéfiants.",
+    "explication": "Opération Paper : soutien de la CIA aux troupes du Kuomintang réfugiées en Birmanie au début des années 1950.",
+    "source": "https://en.wikipedia.org/wiki/Operation_Paper",
+    "_example": true
+  },
+  {
+    "id": "cia-072",
+    "type": "cia",
+    "phrase": "Recruter des montagnards pour surveiller en secret une piste logistique ennemie serpentant à travers la jungle.",
+    "explication": "Opération Hardnose : opération de renseignement de la CIA surveillant la piste Hô Chi Minh au Laos.",
+    "source": "https://en.wikipedia.org/wiki/Operation_Hardnose",
+    "_example": true
+  },
+  {
+    "id": "cia-073",
+    "type": "cia",
+    "phrase": "Implanter une station d'espionnage géante sous couverture pour piloter sabotages et infiltrations contre une île voisine.",
+    "explication": "JMWAVE : principale station de la CIA, basée près de Miami, dédiée aux opérations contre Cuba dans les années 1960.",
+    "source": "https://en.wikipedia.org/wiki/JMWAVE",
+    "_example": true
+  },
+  {
+    "id": "cia-074",
+    "type": "cia",
+    "phrase": "Commander un rapport secret recommandant d'adopter des méthodes de renseignement plus impitoyables, quitte à renoncer aux règles de fair-play.",
+    "explication": "Rapport Doolittle (1954) : rapport sur les activités de la CIA préconisant des méthodes clandestines plus agressives face à l'URSS.",
+    "source": "https://en.wikipedia.org/wiki/Doolittle_Report",
+    "_example": true
+  },
+  {
     "id": "fic-001",
     "type": "fiction",
     "phrase": "Mettre en orbite une flotte d'aéronefs lourdement armés, reliés à un algorithme prédictif, chargés d'identifier et d'éliminer par anticipation les individus considérés comme de futures menaces.",
@@ -1005,6 +1093,94 @@
     "phrase": "S'injecter un gaz expérimental amplifiant la force avant de terroriser une ville à bord d'un planeur armé.",
     "explication": "Plan du Bouffon Vert dans Spider-Man (2002). Pure fiction (Marvel).",
     "source": "Spider-Man (2002)",
+    "_example": true
+  },
+  {
+    "id": "fic-064",
+    "type": "fiction",
+    "phrase": "Détourner des bombes nucléaires de l'OTAN pour rançonner les puissances occidentales.",
+    "explication": "Plan du SPECTRE dans Opération Tonnerre (Thunderball, 1965). Pure fiction.",
+    "source": "Opération Tonnerre (1965)",
+    "_example": true
+  },
+  {
+    "id": "fic-065",
+    "type": "fiction",
+    "phrase": "Capturer en orbite les capsules spatiales de deux superpuissances pour les pousser à se déclarer la guerre.",
+    "explication": "Plan de Blofeld dans On ne vit que deux fois (1967). Pure fiction.",
+    "source": "On ne vit que deux fois (1967)",
+    "_example": true
+  },
+  {
+    "id": "fic-066",
+    "type": "fiction",
+    "phrase": "Inonder le marché d'héroïne gratuite pour créer une masse de dépendants avant d'en monopoliser le trafic.",
+    "explication": "Plan de M. Big / Kananga dans Vivre et laisser mourir (1973). Pure fiction.",
+    "source": "Vivre et laisser mourir (1973)",
+    "_example": true
+  },
+  {
+    "id": "fic-067",
+    "type": "fiction",
+    "phrase": "Provoquer un attentat et faire accuser un innocent pour monter les uns contre les autres les membres d'une équipe de héros.",
+    "explication": "Plan de Helmut Zemo dans Captain America: Civil War (2016). Pure fiction (Marvel).",
+    "source": "Captain America: Civil War (2016)",
+    "_example": true
+  },
+  {
+    "id": "fic-068",
+    "type": "fiction",
+    "phrase": "Enlever et conditionner de jeunes femmes pour en faire un réseau d'espionnes-tueuses obéissant à un mot d'ordre.",
+    "explication": "La « Chambre rouge » dans Black Widow (2021). Pure fiction (Marvel).",
+    "source": "Black Widow (2021)",
+    "_example": true
+  },
+  {
+    "id": "fic-069",
+    "type": "fiction",
+    "phrase": "L'ordinateur de bord d'un vaisseau spatial élimine son équipage pour préserver le secret de la mission.",
+    "explication": "HAL 9000 dans 2001, l'Odyssée de l'espace (1968). Pure fiction.",
+    "source": "2001, l'Odyssée de l'espace (1968)",
+    "_example": true
+  },
+  {
+    "id": "fic-070",
+    "type": "fiction",
+    "phrase": "Une intelligence artificielle centrale prend le contrôle des robots pour confiner l'humanité « afin de la protéger d'elle-même ».",
+    "explication": "Le superordinateur VIKI dans I, Robot (2004). Pure fiction.",
+    "source": "I, Robot (2004)",
+    "_example": true
+  },
+  {
+    "id": "fic-071",
+    "type": "fiction",
+    "phrase": "Téléverser l'esprit d'un savant dans les réseaux informatiques, où il s'étend jusqu'à tout contrôler.",
+    "explication": "Intrigue du film Transcendance (2014). Pure fiction.",
+    "source": "Transcendance (2014)",
+    "_example": true
+  },
+  {
+    "id": "fic-072",
+    "type": "fiction",
+    "phrase": "S'emparer d'un boîtier capable de déchiffrer n'importe quel code et donc de pénétrer n'importe quel système.",
+    "explication": "Le « black box » convoité dans Les Experts (Sneakers, 1992). Pure fiction.",
+    "source": "Sneakers — Les Experts (1992)",
+    "_example": true
+  },
+  {
+    "id": "fic-073",
+    "type": "fiction",
+    "phrase": "Geler une ville entière à l'aide d'un canon à glace géant pour la tenir en otage.",
+    "explication": "Plan de Mr. Freeze dans Batman et Robin (1997). Pure fiction.",
+    "source": "Batman et Robin (1997)",
+    "_example": true
+  },
+  {
+    "id": "fic-074",
+    "type": "fiction",
+    "phrase": "Un pilote automatique maintient les humains passifs et à la dérive dans l'espace pour leur éviter tout retour sur Terre.",
+    "explication": "Le robot AUTO dans WALL-E (2008). Pure fiction (Pixar).",
+    "source": "WALL-E (2008)",
     "_example": true
   }
 ]

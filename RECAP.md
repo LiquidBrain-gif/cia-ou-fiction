@@ -32,7 +32,7 @@ hébergé sur **AWS S3**, provisionné avec **Terraform** et déployé par un
   victoire, descente « game over ». **Polices embarquées** (zéro dépendance).
 
 ### b) Les données — `src/data/questions.json`
-- **126 questions** : 63 « CIA » + 63 « fiction » (pool équilibré).
+- **148 questions** : 74 « CIA » + 74 « fiction » (pool équilibré).
 - **20 opérations CIA réelles** et documentées, chacune avec un lien Wikipédia (FR
   privilégié).
 - **20 plans fictifs** formulés en style « fiche d'opération » sobre, **sans nom de
