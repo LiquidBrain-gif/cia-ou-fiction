@@ -168,6 +168,31 @@ nouveaux fichiers).
 
 ---
 
+## 🧪 Tester localement (mode développement)
+
+Pour relire/tester les phrases sans déployer ni attendre la rotation quotidienne :
+
+1. Lance le mini-serveur local (PowerShell, aucune installation) :
+   ```powershell
+   pwsh -File serve.ps1
+   ```
+   Le jeu est servi sur `http://localhost:8000/`.
+
+2. Active le **mode test** via un paramètre d'URL (sans effet pour les joueurs
+   normaux, et **sans aucune sauvegarde** `localStorage`) :
+
+   | URL | Effet |
+   | --- | --- |
+   | `http://localhost:8000/?all=1` | Défile **les 40 questions** à la suite (relecture complète) |
+   | `http://localhost:8000/?day=20250` | Force un **jour précis** et affiche le triplet correspondant |
+   | `http://localhost:8000/?pick=cia-007,fic-003` | Ne teste **que ces questions**, dans cet ordre |
+
+   Une bannière « 🧪 MODE TEST » s'affiche en haut avec des raccourcis (toutes /
+   jour +1 / quitter). Ces paramètres fonctionnent aussi sur l'URL S3 déployée.
+
+   Sans paramètre, le jeu se comporte exactement comme en production (3 phrases
+   du jour, persistance normale).
+
 ## ⚠️ Limites assumées du projet
 
 - **Pas de HTTPS** : S3 website hosting sert en HTTP seul. (Le HTTPS pourra être

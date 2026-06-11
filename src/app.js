@@ -30,6 +30,8 @@ const els = {
 let pool = [];          // les 40 questions chargées depuis questions.json
 let todaysQuestions = []; // les 3 questions du jour (sous-ensemble de pool)
 let state = null;       // l'état de la partie (persisté dans localStorage)
+let sessionCount = QUESTIONS_PER_DAY; // nb de questions de la session (varie en mode test)
+let persist = true;     // false en mode test : aucune écriture/lecture localStorage
 
 /* -------------------------------------------------------------------------
    1) PRNG déterministe : mulberry32
@@ -94,6 +96,7 @@ function loadState() {
 }
 
 function saveState() {
+  if (!persist) return; // mode test : on ne sauvegarde rien
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
   } catch (e) {
@@ -119,7 +122,7 @@ function showFinalScreen() {
   els.gameScreen.hidden = true;
   els.finalScreen.hidden = false;
   els.progress.textContent = "Terminé";
-  els.finalScore.textContent = `Score : ${state.score} / ${QUESTIONS_PER_DAY}`;
+  els.finalScore.textContent = `Score : ${state.score} / ${sessionCount}`;
 
   const messages = [
     "Aïe… les services secrets ne vous recruteront pas tout de suite.",
@@ -133,7 +136,7 @@ function showFinalScreen() {
 function renderQuestion() {
   const q = todaysQuestions[state.current];
 
-  els.progress.textContent = `Question ${state.current + 1} / ${QUESTIONS_PER_DAY}`;
+  els.progress.textContent = `Question ${state.current + 1} / ${sessionCount}`;
   els.phrase.textContent = q.phrase;
 
   // Réinitialise les boutons de choix
@@ -185,7 +188,7 @@ function lockAndReveal(given, q) {
 
   // Bouton suivant ou fin
   els.btnNext.textContent =
-    state.current >= QUESTIONS_PER_DAY - 1 ? "Voir mon score →" : "Suivant →";
+    state.current >= sessionCount - 1 ? "Voir mon score →" : "Suivant →";
 
   els.result.hidden = false;
 }
@@ -208,7 +211,7 @@ function onChoice(given) {
 }
 
 function onNext() {
-  if (state.current >= QUESTIONS_PER_DAY - 1) {
+  if (state.current >= sessionCount - 1) {
     state.finished = true;
     saveState();
     showFinalScreen();
@@ -220,22 +223,92 @@ function onNext() {
 }
 
 /* -------------------------------------------------------------------------
-   5) Démarrage
+   5) Mode test (piloté par l'URL — sans effet pour les joueurs normaux)
+
+   Paramètres reconnus :
+     ?all=1                  → défile TOUTES les questions du pool (relecture)
+     ?day=12345              → force un dayIndex précis (voir le triplet du jour)
+     ?pick=cia-007,fic-003   → ne teste que ces questions (dans cet ordre)
+   La présence de l'un d'eux active le mode test : aucune lecture/écriture
+   localStorage, et une bannière d'info s'affiche. Sans paramètre, le jeu se
+   comporte exactement comme en production.
+   ------------------------------------------------------------------------- */
+function getTestConfig() {
+  const p = new URLSearchParams(location.search);
+  const all = p.has("all");
+  const pickRaw = p.get("pick");
+  const dayRaw = p.get("day");
+  const pick = pickRaw
+    ? pickRaw.split(",").map((s) => s.trim()).filter(Boolean)
+    : null;
+  const day =
+    dayRaw !== null && dayRaw.trim() !== "" && Number.isFinite(Number(dayRaw))
+      ? Math.floor(Number(dayRaw))
+      : null;
+  const enabled = all || (pick && pick.length > 0) || day !== null || p.has("test");
+  return { enabled, all, pick, day };
+}
+
+function showTestBanner(mode, dayIndex) {
+  const bar = document.createElement("div");
+  bar.style.cssText =
+    "position:sticky;top:0;z-index:50;background:#7c2d12;color:#fff;" +
+    "padding:.5rem .75rem;font-size:.8rem;text-align:center;border-bottom:2px solid #ea580c;";
+  const a = (href, label) =>
+    `<a style="color:#fde68a;text-decoration:underline" href="${href}">${label}</a>`;
+  bar.innerHTML =
+    `🧪 <strong>MODE TEST</strong> — ${mode} · jour ${dayIndex} · ` +
+    `${a("?all=1", "toutes")} · ${a("?day=" + (dayIndex + 1), "jour +1")} · ` +
+    `${a("?day=" + dayIndex, "ce triplet")} · ${a(location.pathname, "quitter")} ` +
+    `<span style="opacity:.8">(aucune sauvegarde)</span>`;
+  document.body.insertBefore(bar, document.body.firstChild);
+}
+
+/* -------------------------------------------------------------------------
+   6) Démarrage
    ------------------------------------------------------------------------- */
 function startApp() {
-  const dayIndex = getDayIndex();
+  const test = getTestConfig();
+  const dayIndex = test.day !== null ? test.day : getDayIndex();
 
-  // Sélectionne les 3 questions du jour (déterministe)
-  const idx = pickDailyIndices(dayIndex, pool.length, QUESTIONS_PER_DAY);
-  todaysQuestions = idx.map((i) => pool[i]);
-
-  // Charge l'état existant et décide quoi faire
-  const saved = loadState();
-  if (saved && saved.dayIndex === dayIndex) {
-    state = saved; // reprise (en cours ou terminée)
+  // Sélection des questions selon le mode
+  if (test.all) {
+    todaysQuestions = pool.slice(); // toutes, dans l'ordre du fichier
+  } else if (test.pick && test.pick.length) {
+    todaysQuestions = test.pick
+      .map((id) => pool.find((q) => q.id === id))
+      .filter(Boolean);
+    if (!todaysQuestions.length) {
+      // aucun id valide → repli sur le triplet du jour
+      todaysQuestions = pickDailyIndices(dayIndex, pool.length, QUESTIONS_PER_DAY).map(
+        (i) => pool[i]
+      );
+    }
   } else {
-    state = newGameState(dayIndex); // nouveau jour (ou première visite)
-    saveState();
+    const idx = pickDailyIndices(dayIndex, pool.length, QUESTIONS_PER_DAY);
+    todaysQuestions = idx.map((i) => pool[i]);
+  }
+  sessionCount = todaysQuestions.length;
+
+  if (test.enabled) {
+    // Mode test : pas de persistance, partie toujours fraîche, bannière visible
+    persist = false;
+    state = newGameState(dayIndex);
+    const label = test.all
+      ? "toutes les questions"
+      : test.pick && test.pick.length
+      ? "sélection (" + sessionCount + ")"
+      : "jour forcé";
+    showTestBanner(label, dayIndex);
+  } else {
+    // Mode normal : reprise / nouvelle partie via localStorage
+    const saved = loadState();
+    if (saved && saved.dayIndex === dayIndex) {
+      state = saved;
+    } else {
+      state = newGameState(dayIndex);
+      saveState();
+    }
   }
 
   // Branche les écouteurs
