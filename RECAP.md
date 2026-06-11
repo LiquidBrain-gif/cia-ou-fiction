@@ -20,14 +20,15 @@ avec **Terraform** et déployé par un **script bash**.
 
 ### a) Le jeu (front-end statique)
 - **HTML / CSS / JavaScript vanilla**, une seule page, **aucun framework ni build**.
-- **3 questions par jour**, tirées du pool de 40 de façon **déterministe** : même
-  triplet pour tous les joueurs un jour donné, rotation à minuit UTC.
-  - Implémentation : PRNG **mulberry32** seedé par le numéro du jour
-    (`dayIndex = floor(Date.now() / 86 400 000)`) + mélange de Fisher-Yates partiel.
-- **Persistance via `localStorage`** : reprise de partie, écran final verrouillé,
-  nouvelle partie au changement de jour, gestion des données corrompues (`try/catch`).
-- **UI** « dossier déclassifié » responsive, indicateur de progression,
+- **Mode arcade à 3 vies** : les 40 questions s'enchaînent en **ordre mélangé**
+  (Fisher-Yates), chaque erreur coûte **une vie** ; on continue tant qu'il reste
+  des vies. Fin → **score + record + bouton Rejouer**.
+- **Persistance via `localStorage`** : reprise de partie en cours, **record**
+  conservé, gestion des données corrompues (`try/catch`).
+- **UI** « dossier déclassifié » responsive, barre de **vies (cœurs) + score**,
   correct/incorrect distingués par **couleur + texte/tampon** (accessibilité).
+- **Sons** (Web Audio API, aucun fichier) : bons/mauvais coups, fanfare de
+  victoire, descente « game over ». **Polices embarquées** (zéro dépendance).
 
 ### b) Les données — `src/data/questions.json`
 - **40 questions** : 20 « CIA » + 20 « fiction ».
@@ -80,8 +81,8 @@ S3 bucket (static website hosting, us-east-1, lecture publique)
 | **S3 static website hosting** | Hébergement statique simple et quasi gratuit ; pas de serveur. |
 | **Terraform (state local)** | Infrastructure reproductible (IaC) ; state local assumé. |
 | **Script bash, pas de CI/CD** | Credentials Academy renouvelés toutes les ~4 h → secrets de pipeline ingérables. |
-| **`localStorage`, pas de backend** | Aucune donnée sensible, aucun serveur ; état chez le joueur. |
-| **Rotation déterministe (PRNG seedé)** | Même jeu pour tous chaque jour, sans backend, juste avec la date. |
+| **`localStorage`, pas de backend** | Aucune donnée sensible, aucun serveur ; état + record chez le joueur. |
+| **Mode arcade à 3 vies** | Plus rejouable et nerveux qu'un quiz figé ; ordre mélangé à chaque partie. |
 
 ---
 

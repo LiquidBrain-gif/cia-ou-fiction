@@ -1,6 +1,6 @@
 # 🕵️ CIA ou Fiction ?
 
-Petit jeu web quotidien, type *Wordle*, entièrement **statique**, déployé sur
+Petit jeu web **arcade** type quiz, entièrement **statique**, déployé sur
 **AWS S3 (static website hosting)** via **Terraform**.
 
 > **Auteurs :** Lucien VALVERDE & Rafik ZEMOURI — Master Cybersécurité IPSSI
@@ -17,10 +17,12 @@ Le site affiche une phrase décrivant un plan. Le joueur devine s'il s'agit :
 Après chaque choix, le site indique **Vrai / Faux**, affiche une **explication**
 et une **source** (lien Wikipédia pour les opérations CIA).
 
-Chaque jour, le joueur répond à **3 phrases**, une à la fois (on répond, on voit
-le résultat, on passe à la suivante). À la fin, le **score sur 3** s'affiche.
-Les 3 phrases du jour sont **identiques pour tous les joueurs** et **changent
-chaque jour** (rotation à minuit UTC).
+**Mode de jeu — arcade à 3 vies.** Les questions s'enchaînent dans un ordre
+mélangé. Chaque **bonne réponse** rapporte 1 point ; chaque **erreur** coûte
+**une vie**. Tant qu'il reste des vies, le joueur continue. À **0 vie** (ou après
+avoir passé les 40 questions), la partie s'arrête : le **score** et le **record**
+s'affichent, avec un bouton **Rejouer**. Vies et record sont mémorisés en
+`localStorage`.
 
 ---
 
@@ -52,13 +54,15 @@ S3 bucket (static website hosting, us-east-1, lecture publique)
 
 ```
 /
-├── README.md
-├── .gitignore
+├── README.md / RECAP.md / CLAUDE.md   # docs (utilisateur / synthèse / historique)
+├── .gitignore / .gitattributes
 ├── deploy.sh                 # déploiement en une commande
+├── serve.ps1                 # serveur local de test (dev, hors src/)
 ├── src/                      # site statique (synchronisé vers S3)
 │   ├── index.html
 │   ├── style.css
 │   ├── app.js
+│   ├── fonts/                # polices embarquées (Special Elite, IBM Plex Mono)
 │   └── data/
 │       └── questions.json    # les 40 questions
 └── infra/                    # Terraform
@@ -156,9 +160,8 @@ Toutes les questions vivent dans **`src/data/questions.json`** : un tableau de
 - `source` : pour une opération CIA, un **lien Wikipédia réel** ; pour une
   fiction, un titre d'œuvre (ou un lien). Les URLs (`http(s)://`) deviennent
   automatiquement des liens cliquables.
-- Les 6 entrées d'exemple portent un champ `"_example": true` pour être
-  repérées facilement.
-- Les entrées `[À REMPLIR — …]` sont des **placeholders** à compléter.
+- Les entrées rédigées par l'IA portent un champ `"_example": true` pour être
+  repérées et relues facilement.
 
 > ⚠️ Pour les opérations CIA, n'utilisez que des faits **réellement documentés**
 > avec une **URL Wikipédia exacte**. Ne fabriquez aucun fait ni aucun lien.
@@ -170,7 +173,7 @@ nouveaux fichiers).
 
 ## 🧪 Tester localement (mode développement)
 
-Pour relire/tester les phrases sans déployer ni attendre la rotation quotidienne :
+Pour relire/tester les phrases sans déployer :
 
 1. Lance le mini-serveur local (PowerShell, aucune installation) :
    ```powershell
@@ -183,15 +186,14 @@ Pour relire/tester les phrases sans déployer ni attendre la rotation quotidienn
 
    | URL | Effet |
    | --- | --- |
-   | `http://localhost:8000/?all=1` | Défile **les 40 questions** à la suite (relecture complète) |
-   | `http://localhost:8000/?day=20250` | Force un **jour précis** et affiche le triplet correspondant |
-   | `http://localhost:8000/?pick=cia-007,fic-003` | Ne teste **que ces questions**, dans cet ordre |
+   | `http://localhost:8000/?all=1` | Joue **les 40 questions** dans l'ordre du fichier (relecture complète) |
+   | `http://localhost:8000/?pick=cia-007,fic-003` | Ne joue **que ces questions**, dans cet ordre |
 
-   Une bannière « 🧪 MODE TEST » s'affiche en haut avec des raccourcis (toutes /
-   jour +1 / quitter). Ces paramètres fonctionnent aussi sur l'URL S3 déployée.
+   Une bannière « 🧪 MODE TEST » s'affiche en haut (raccourcis : toutes / quitter).
+   Ces paramètres fonctionnent aussi sur l'URL S3 déployée.
 
-   Sans paramètre, le jeu se comporte exactement comme en production (3 phrases
-   du jour, persistance normale).
+   Sans paramètre, le jeu se comporte normalement (partie arcade à 3 vies,
+   ordre aléatoire, persistance + record).
 
 ## ⚠️ Limites assumées du projet
 
@@ -201,8 +203,6 @@ Pour relire/tester les phrases sans déployer ni attendre la rotation quotidienn
 - **State Terraform local** : pas de backend distant (limite assumée).
 - **Pas de CI/CD** : les credentials Academy tournant toutes les ~4 h rendraient
   les secrets de pipeline ingérables. Le script `deploy.sh` suffit.
-- **Contenu en partie à compléter** : 6 questions réelles sont fournies pour la
-  démo ; les 34 autres sont des placeholders.
 - **Pas d'utilisateur IAM** : interdit en Academy ; on utilise les credentials
   temporaires de l'environnement.
 

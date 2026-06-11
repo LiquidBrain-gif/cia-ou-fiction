@@ -3,9 +3,47 @@
    Document de renseignement Guerre Froide : papier kraft sur bureau sombre,
    machine à écrire, tampons à l'encre, grain de pellicule, accents ambre.
    Typo : Special Elite (titres/tampons) + IBM Plex Mono (corps).
+   Polices EMBARQUÉES localement (dossier fonts/) — aucune dépendance externe.
    Accessibilité conservée : contraste, focus-visible, prefers-reduced-motion,
    information jamais portée par la seule couleur (tampons = texte + couleur).
    ========================================================================= */
+
+/* --- Polices locales --- */
+@font-face {
+  font-family: "Special Elite";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/SpecialElite-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/IBMPlexMono-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/IBMPlexMono-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/IBMPlexMono-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/IBMPlexMono-Bold.ttf") format("truetype");
+}
 
 :root {
   /* Bureau (fond) */
@@ -182,6 +220,13 @@ body {
   text-transform: uppercase;
   animation: fade-down var(--t-base) both;
   animation-delay: 60ms;
+}
+/* Cœurs de vie agrandis (sans grossir le reste de l'étiquette) */
+.progress .lives {
+  font-size: 1.7em;
+  letter-spacing: 0.12em;
+  vertical-align: -0.12em;
+  color: var(--stamp-red);
 }
 
 /* --- Carte « papier » --- */
@@ -406,7 +451,15 @@ body {
   margin: var(--space-2) 0;
   animation: stamp-in 320ms cubic-bezier(0.2, 1.4, 0.45, 1) both;
 }
-.final-message { font-size: 0.98rem; margin: var(--space-2) auto var(--space-4); max-width: 50ch; }
+.final-message { font-size: 0.98rem; margin: var(--space-2) auto var(--space-3); max-width: 50ch; }
+.final-best {
+  font-family: var(--display);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  margin: 0 0 var(--space-5);
+}
+.final-screen .btn-next { margin-bottom: var(--space-4); }
 .come-back { color: var(--ink-soft); font-size: 0.8rem; }
 
 /* --- Pied de page --- */

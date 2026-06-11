@@ -8,11 +8,17 @@
 
 ## 1. Le projet en bref
 
-Jeu web quotidien type *Wordle* : le joueur lit une phrase décrivant un plan et
-devine si c'est un **vrai projet de la CIA** ou un **plan de fiction** (film/série).
-3 phrases par jour, identiques pour tous, rotation à minuit UTC. Score /3, état en
-`localStorage`. **100 % statique**, hébergé sur **AWS S3**, provisionné par
-**Terraform**, déployé par **script bash**. Aucun backend, aucune base de données.
+Jeu web type *Wordle* : le joueur lit une phrase décrivant un plan et devine si
+c'est un **vrai projet de la CIA** ou un **plan de fiction** (film/série).
+**Mode arcade à 3 vies** : questions en ordre mélangé, chaque erreur coûte une
+vie, on continue tant qu'il reste des vies (sinon fin + record + rejouer).
+Score = bonnes réponses. État + record en `localStorage`. **100 % statique**,
+hébergé sur **AWS S3**, provisionné par **Terraform**, déployé par **script bash**.
+Aucun backend, aucune base de données.
+
+> ⚠️ Historique : le jeu utilisait au départ « 3 phrases/jour identiques pour
+> tous, rotation déterministe à minuit UTC ». Lucien a fait évoluer ça vers le
+> **mode arcade à 3 vies** (décision assumée, s'écarte du cahier des charges initial).
 
 - **URL en ligne :** http://cia-or-fiction-36efcf95.s3-website-us-east-1.amazonaws.com
 - **GitHub :** https://github.com/LiquidBrain-gif/cia-ou-fiction (branche `main`)
@@ -47,17 +53,19 @@ devine si c'est un **vrai projet de la CIA** ou un **plan de fiction** (film/sé
 
 ## 4. Logique clé (app.js)
 
-- **Rotation déterministe** : `dayIndex = floor(Date.now()/86400000)` → PRNG
-  **mulberry32** seedé par `dayIndex` → Fisher-Yates partiel pour tirer 3 index
-  distincts parmi 40. Même triplet pour tous chaque jour.
-- **Persistance** : clé `cia-or-fiction:v1` (état partie) ; clé `cia-or-fiction:muted`
-  (préférence son). `try/catch` partout.
+- **Mode arcade à 3 vies** : ordre des questions mélangé (Fisher-Yates
+  `Math.random`, aléatoire à chaque partie). État : `{ order, pos, lives, score,
+  answered, finished }`. Bonne réponse → `score++` ; erreur → `lives--`. Fin quand
+  `lives==0` ou toutes les questions passées. Bouton **Rejouer** (`#btn-replay`).
+- **Persistance** : `cia-or-fiction:v2` (état partie), `cia-or-fiction:best`
+  (record), `cia-or-fiction:muted` (son). `try/catch` partout. Flag `persist`
+  (false en mode test → aucune lecture/écriture).
 - **Mode test (URL, sans effet pour les joueurs, AUCUNE sauvegarde)** :
-  - `?all=1` → défile les 40 questions ; `?day=N` → force un jour ;
-    `?pick=cia-007,fic-003` → questions précises. Bannière « 🧪 MODE TEST ».
-  - Implémenté via `sessionCount` (nb variable) + flag `persist`.
-- **Sons** : Web Audio API (oscillateurs générés à la volée, aucun fichier).
-  Bip ascendant si correct, grave si faux. Bouton mute 🔊/🔇 (`#btn-mute`).
+  `?all=1` → joue les 40 dans l'ordre du fichier ; `?pick=cia-007,fic-003` →
+  questions précises ; `?test` → partie fraîche. Bannière « 🧪 MODE TEST ».
+- **Sons** : Web Audio API (oscillateurs générés, aucun fichier). Bip ascendant si
+  correct, grave si faux, **fanfare espion** si on survit à tout, **descente
+  game-over** à 0 vie. Bouton mute 🔊/🔇 (`#btn-mute`).
 
 ## 5. Données — src/data/questions.json
 
@@ -95,15 +103,18 @@ le lance « en admin »). **Pousser le code :** `git push` (auth `gh` déjà en 
 Thème **« DOSSIER DÉCLASSIFIÉ »** (Guerre Froide) : papier kraft sur bureau sombre,
 machine à écrire, tampons encreurs (verdict « EXACT » vert / « ERREUR » rouge),
 accents ambre, grain de pellicule (SVG en data-URI). Typo **Special Elite** +
-**IBM Plex Mono** (Google Fonts). Accessibilité conservée : focus-visible, contraste,
-`prefers-reduced-motion`, info jamais portée par la seule couleur.
+**IBM Plex Mono**, **polices embarquées** dans `src/fonts/` (`@font-face`, aucune
+dépendance Google/réseau). Barre de vies en cœurs rouges agrandis. Accessibilité
+conservée : focus-visible, contraste, `prefers-reduced-motion`, info jamais portée
+par la seule couleur.
 Le skill **frontend-design officiel d'Anthropic** est installé dans
 `.claude/skills/frontend-design/` (local, non commité car `.claude/` est gitignore).
 
-⚠️ **Classes/IDs à ne pas casser** (utilisés par app.js) : `#progress`, `#phrase`,
-`#choices`, `#btn-cia`, `#btn-fiction`, `#result`, `#verdict` (+ `.correct/.incorrect`),
-`#explication`, `#source`, `#btn-next`, `#game-screen`, `#final-screen`, `#final-score`,
-`#final-message`, `#btn-mute`, et `.btn-choice` (+ `.is-correct/.is-wrong`).
+⚠️ **Classes/IDs à ne pas casser** (utilisés par app.js) : `#progress` (vies+score,
+contient `.lives`), `#phrase`, `#choices`, `#btn-cia`, `#btn-fiction`, `#result`,
+`#verdict` (+ `.correct/.incorrect`), `#explication`, `#source`, `#btn-next`,
+`#game-screen`, `#final-screen`, `#final-title`, `#final-score`, `#final-message`,
+`#final-best`, `#btn-replay`, `#btn-mute`, et `.btn-choice` (+ `.is-correct/.is-wrong`).
 
 ## 8. État d'avancement
 

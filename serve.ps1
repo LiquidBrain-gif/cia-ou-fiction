@@ -20,6 +20,9 @@ $mime = @{
   ".svg"  = "image/svg+xml"
   ".png"  = "image/png"
   ".ico"  = "image/x-icon"
+  ".ttf"  = "font/ttf"
+  ".woff" = "font/woff"
+  ".woff2" = "font/woff2"
 }
 
 $listener = [System.Net.HttpListener]::new()

@@ -1,12 +1,19 @@
 /* =========================================================================
    CIA ou Fiction ? — logique du jeu (JavaScript vanilla, aucune dépendance)
    Auteurs : Lucien VALVERDE & Rafik ZEMOURI — Master Cybersécurité IPSSI
+
+   Mode de jeu : ARCADE À 3 VIES.
+   Le joueur enchaîne les phrases (ordre mélangé). Chaque mauvaise réponse coûte
+   une vie ; tant qu'il reste des vies, on continue. À 0 vie (ou après avoir
+   passé toutes les questions), la partie se termine. Le meilleur score est
+   conservé. On peut rejouer à volonté.
    ========================================================================= */
 
 "use strict";
 
-const STORAGE_KEY = "cia-or-fiction:v1";
-const QUESTIONS_PER_DAY = 3;
+const STORAGE_KEY = "cia-or-fiction:v2"; // v2 : nouvelle mécanique (vies)
+const BEST_KEY = "cia-or-fiction:best";
+const START_LIVES = 3;
 
 /* --- Éléments du DOM --- */
 const els = {
@@ -22,79 +29,33 @@ const els = {
   explication: document.getElementById("explication"),
   source: document.getElementById("source"),
   btnNext: document.getElementById("btn-next"),
+  finalTitle: document.getElementById("final-title"),
   finalScore: document.getElementById("final-score"),
   finalMessage: document.getElementById("final-message"),
+  finalBest: document.getElementById("final-best"),
+  btnReplay: document.getElementById("btn-replay"),
   btnMute: document.getElementById("btn-mute"),
 };
 
 /* État courant en mémoire */
-let pool = [];          // les 40 questions chargées depuis questions.json
-let todaysQuestions = []; // les 3 questions du jour (sous-ensemble de pool)
-let state = null;       // l'état de la partie (persisté dans localStorage)
-let sessionCount = QUESTIONS_PER_DAY; // nb de questions de la session (varie en mode test)
-let persist = true;     // false en mode test : aucune écriture/lecture localStorage
+let pool = [];        // les 40 questions chargées depuis questions.json
+let state = null;     // l'état de la partie (persisté dans localStorage)
+let best = 0;         // meilleur score conservé
+let persist = true;   // false en mode test : aucune écriture/lecture localStorage
+let testCfg = { enabled: false, all: false, pick: null };
 
 /* -------------------------------------------------------------------------
-   1) PRNG déterministe : mulberry32
-   Choix : générateur 32 bits, rapide, sans dépendance, qui produit toujours
-   la même suite pour une même graine. On le seede avec le numéro du jour
-   (dayIndex) pour que les 3 questions soient identiques pour tous les
-   joueurs un jour donné, et qu'elles changent chaque jour.
-   ------------------------------------------------------------------------- */
-function mulberry32(seed) {
-  let a = seed >>> 0;
-  return function () {
-    a |= 0;
-    a = (a + 0x6d2b79f5) | 0;
-    let t = Math.imul(a ^ (a >>> 15), 1 | a);
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
-
-/* Numéro du jour en UTC : nombre de jours écoulés depuis l'epoch Unix.
-   Le jeu bascule donc à minuit UTC. */
-function getDayIndex() {
-  return Math.floor(Date.now() / 86400000);
-}
-
-/* Tire QUESTIONS_PER_DAY index DISTINCTS parmi [0, pool.length[ de manière
-   déterministe via un mélange de Fisher-Yates partiel seedé par dayIndex.
-   Le mélange (plutôt qu'un simple modulo) assure une bonne couverture du
-   pool et évite des triplets adjacents toujours identiques. */
-function pickDailyIndices(dayIndex, total, count) {
-  const rand = mulberry32(dayIndex);
-  const indices = Array.from({ length: total }, (_, i) => i);
-  for (let i = 0; i < count; i++) {
-    const j = i + Math.floor(rand() * (total - i));
-    [indices[i], indices[j]] = [indices[j], indices[i]];
-  }
-  return indices.slice(0, count);
-}
-
-/* -------------------------------------------------------------------------
-   1bis) Sons (Web Audio API — générés à la volée, aucun fichier audio)
-   Un AudioContext est créé paresseusement au premier clic (geste utilisateur
-   requis par les navigateurs). La préférence muet est mémorisée séparément.
+   1) Sons (Web Audio API — générés à la volée, aucun fichier audio)
    ------------------------------------------------------------------------- */
 const MUTE_KEY = "cia-or-fiction:muted";
-let audioCtx = null;       // null = pas encore créé, false = non supporté
+let audioCtx = null; // null = pas encore créé, false = non supporté
 let muted = false;
 
 function loadMutePref() {
-  try {
-    return localStorage.getItem(MUTE_KEY) === "1";
-  } catch (e) {
-    return false;
-  }
+  try { return localStorage.getItem(MUTE_KEY) === "1"; } catch (e) { return false; }
 }
-
 function saveMutePref() {
-  try {
-    localStorage.setItem(MUTE_KEY, muted ? "1" : "0");
-  } catch (e) {
-    /* sans effet si indisponible */
-  }
+  try { localStorage.setItem(MUTE_KEY, muted ? "1" : "0"); } catch (e) { /* ignore */ }
 }
 
 function getAudioCtx() {
@@ -105,7 +66,7 @@ function getAudioCtx() {
   return audioCtx || null;
 }
 
-// Joue une note simple (oscillateur + enveloppe douce pour éviter les « clics »).
+// Note simple (oscillateur + enveloppe douce pour éviter les « clics »).
 function beep(freq, start, duration, type, peak) {
   const ctx = getAudioCtx();
   if (!ctx) return;
@@ -121,20 +82,53 @@ function beep(freq, start, duration, type, peak) {
   osc.stop(start + duration);
 }
 
-// Sons de réponse : bip ascendant joyeux si correct, note grave si incorrect.
+function ensureAudioRunning() {
+  const ctx = getAudioCtx();
+  if (ctx && ctx.state === "suspended") ctx.resume();
+  return ctx;
+}
+
+// Réponse : bip ascendant joyeux si correct, note grave si incorrect.
 function playAnswerSound(correct) {
   if (muted) return;
-  const ctx = getAudioCtx();
+  const ctx = ensureAudioRunning();
   if (!ctx) return;
-  if (ctx.state === "suspended") ctx.resume();
   const t = ctx.currentTime;
   if (correct) {
-    beep(659.25, t, 0.12, "sine", 0.2); // mi
-    beep(987.77, t + 0.1, 0.22, "sine", 0.2); // si (plus aigu)
+    beep(659.25, t, 0.12, "sine", 0.2);
+    beep(987.77, t + 0.1, 0.22, "sine", 0.2);
   } else {
-    beep(196, t, 0.28, "square", 0.12); // sol grave
-    beep(146.83, t + 0.09, 0.3, "square", 0.1); // ré plus grave
+    beep(196, t, 0.28, "square", 0.12);
+    beep(146.83, t + 0.09, 0.3, "square", 0.1);
   }
+}
+
+// Fin victorieuse (toutes les questions passées) : fanfare « espion ».
+function playFanfare() {
+  if (muted) return;
+  const ctx = ensureAudioRunning();
+  if (!ctx) return;
+  const t = ctx.currentTime + 0.03;
+  const step = 0.16;
+  const riff = [82.41, 82.41, 98.0, 82.41, 110.0, 82.41, 98.0, 116.54];
+  riff.forEach((f, i) => beep(f, t + i * step, 0.14, "sawtooth", 0.12));
+  const s = t + riff.length * step + 0.05;
+  beep(82.41, s, 0.6, "sawtooth", 0.12);
+  beep(329.63, s, 0.6, "triangle", 0.16);
+  beep(392.0, s, 0.6, "triangle", 0.14);
+  beep(493.88, s, 0.6, "triangle", 0.12);
+}
+
+// Game over (plus de vies) : descente sombre.
+function playGameOver() {
+  if (muted) return;
+  const ctx = ensureAudioRunning();
+  if (!ctx) return;
+  const t = ctx.currentTime + 0.02;
+  beep(196.0, t, 0.25, "sawtooth", 0.12);
+  beep(164.81, t + 0.18, 0.28, "sawtooth", 0.12);
+  beep(130.81, t + 0.38, 0.5, "sawtooth", 0.12);
+  beep(98.0, t + 0.62, 0.75, "triangle", 0.12);
 }
 
 function updateMuteButton() {
@@ -142,7 +136,6 @@ function updateMuteButton() {
   els.btnMute.textContent = muted ? "🔇" : "🔊";
   els.btnMute.setAttribute("aria-pressed", muted ? "true" : "false");
 }
-
 function toggleMute() {
   muted = !muted;
   saveMutePref();
@@ -156,255 +149,284 @@ function loadState() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return null;
-    const parsed = JSON.parse(raw);
-    // Validation minimale de la forme attendue
+    const p = JSON.parse(raw);
     if (
-      typeof parsed !== "object" ||
-      typeof parsed.dayIndex !== "number" ||
-      !Array.isArray(parsed.answers)
+      typeof p !== "object" ||
+      !Array.isArray(p.order) ||
+      typeof p.pos !== "number" ||
+      typeof p.lives !== "number" ||
+      typeof p.score !== "number"
     ) {
       return null;
     }
-    return parsed;
+    return p;
   } catch (e) {
-    // Données illisibles : on repart proprement.
     console.warn("État localStorage corrompu, réinitialisation.", e);
     return null;
   }
 }
-
 function saveState() {
-  if (!persist) return; // mode test : on ne sauvegarde rien
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-  } catch (e) {
-    // En cas d'échec (mode privé, quota...), le jeu reste jouable en mémoire.
-    console.warn("Impossible d'écrire dans localStorage.", e);
-  }
+  if (!persist) return;
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+  catch (e) { console.warn("Impossible d'écrire dans localStorage.", e); }
+}
+function loadBest() {
+  try { return parseInt(localStorage.getItem(BEST_KEY), 10) || 0; }
+  catch (e) { return 0; }
+}
+function saveBest() {
+  if (!persist) return;
+  try { localStorage.setItem(BEST_KEY, String(best)); } catch (e) { /* ignore */ }
 }
 
-function newGameState(dayIndex) {
+/* -------------------------------------------------------------------------
+   3) Construction d'une partie
+   ------------------------------------------------------------------------- */
+// Mélange de Fisher-Yates (ordre aléatoire des questions à chaque partie).
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// Ordre des questions selon le mode (test ?pick / ?all, sinon mélange complet).
+function buildOrder() {
+  const allIdx = pool.map((_, i) => i);
+  if (testCfg.pick && testCfg.pick.length) {
+    const idx = testCfg.pick
+      .map((id) => pool.findIndex((q) => q.id === id))
+      .filter((i) => i >= 0);
+    if (idx.length) return idx;
+  }
+  if (testCfg.all) return allIdx; // ordre du fichier, pour relire
+  return shuffle(allIdx);
+}
+
+function newGameState() {
   return {
-    dayIndex: dayIndex,
-    current: 0,        // index de la question courante (0..2)
-    answers: [],       // [{ id, given, correct }]
+    order: buildOrder(),
+    pos: 0,
+    lives: START_LIVES,
     score: 0,
+    answered: null, // réponse donnée à la question courante (pour la reprise)
     finished: false,
   };
 }
 
 /* -------------------------------------------------------------------------
-   3) Rendu de l'interface
+   4) Rendu
    ------------------------------------------------------------------------- */
-function showFinalScreen() {
-  els.gameScreen.hidden = true;
-  els.finalScreen.hidden = false;
-  els.progress.textContent = "CLÔTURÉ";
-  els.finalScore.textContent = `${state.score} / ${sessionCount}`;
+function currentQuestion() {
+  return pool[state.order[state.pos]];
+}
 
-  const messages = [
-    "Recrue recalée : le réel vous a tendu tous ses pièges.",
-    "Stagiaire prometteur, mais le terrain réserve des surprises.",
-    "Bon agent : vous démêlez l'intox du dossier authentique.",
-    "Analyste d'élite — sans faute, l'Agence vous remarque.",
-  ];
-  els.finalMessage.textContent = messages[state.score] || "Dossier clôturé.";
+function updateStatusBar() {
+  const full = "♥".repeat(Math.max(0, state.lives));
+  const empty = "♡".repeat(Math.max(0, START_LIVES - state.lives));
+  // Les cœurs sont isolés dans un span pour pouvoir les agrandir en CSS.
+  els.progress.innerHTML = `<span class="lives">${full}${empty}</span> · SCORE ${state.score}`;
 }
 
 function renderQuestion() {
-  const q = todaysQuestions[state.current];
-
-  els.progress.textContent = `PIÈCE ${state.current + 1} / ${sessionCount}`;
+  const q = currentQuestion();
+  updateStatusBar();
   els.phrase.textContent = q.phrase;
 
-  // Réinitialise les boutons de choix
   els.result.hidden = true;
   for (const btn of [els.btnCia, els.btnFiction]) {
     btn.disabled = false;
     btn.classList.remove("is-correct", "is-wrong");
   }
 
-  // Si cette question a déjà été répondue (reprise de partie), on réaffiche
-  // le résultat verrouillé.
-  const previous = state.answers[state.current];
-  if (previous) {
-    lockAndReveal(previous.given, q);
+  // Reprise : si la question courante a déjà reçu une réponse, on la réaffiche.
+  if (state.answered) {
+    lockAndReveal(state.answered, q);
   }
 }
 
 function lockAndReveal(given, q) {
   const isCorrect = given === q.type;
 
-  // Verrouille les deux boutons
   els.btnCia.disabled = true;
   els.btnFiction.disabled = true;
 
-  // Marque visuellement la bonne réponse et, si erreur, le mauvais choix
   const correctBtn = q.type === "cia" ? els.btnCia : els.btnFiction;
   correctBtn.classList.add("is-correct");
   if (!isCorrect) {
-    const chosenBtn = given === "cia" ? els.btnCia : els.btnFiction;
-    chosenBtn.classList.add("is-wrong");
+    (given === "cia" ? els.btnCia : els.btnFiction).classList.add("is-wrong");
   }
 
-  // Verdict (couleur + texte/icône pour ne pas dépendre que de la couleur)
   els.verdict.textContent = isCorrect ? "✓ EXACT" : "✗ ERREUR";
   els.verdict.className = "verdict " + (isCorrect ? "correct" : "incorrect");
 
   els.explication.textContent = q.explication;
 
-  // Source : lien cliquable si c'est une URL, sinon simple texte
   if (/^https?:\/\//i.test(q.source)) {
     els.source.href = q.source;
-    els.source.textContent = "Voir la source ↗";
-    els.source.style.display = "";
+    els.source.textContent = "Consulter la source ↗";
   } else {
     els.source.removeAttribute("href");
     els.source.textContent = "Source : " + q.source;
-    els.source.style.display = "";
   }
 
-  // Bouton suivant ou fin
+  // Étiquette du bouton : fin de partie si plus de vie ou plus de question.
+  const isLast = state.pos >= state.order.length - 1;
   els.btnNext.textContent =
-    state.current >= sessionCount - 1 ? "RAPPORT FINAL →" : "PIÈCE SUIVANTE →";
+    state.lives <= 0 || isLast ? "RAPPORT FINAL →" : "PIÈCE SUIVANTE →";
 
   els.result.hidden = false;
 }
 
+function showFinalScreen() {
+  els.gameScreen.hidden = true;
+  els.finalScreen.hidden = false;
+
+  const survived = state.lives > 0; // a passé toutes les questions sans tomber à 0
+  els.progress.textContent = survived ? "DOSSIER ÉPUISÉ" : "CAPTURÉ";
+  els.finalTitle.textContent = survived ? "Dossier épuisé" : "Mission terminée";
+  els.finalScore.textContent = `SCORE ${state.score}`;
+  els.finalBest.textContent = `Record : ${best}`;
+
+  let msg;
+  if (survived) {
+    msg = "Vous avez parcouru tout le dossier sans tomber. Maître-espion !";
+  } else if (state.score === 0) {
+    msg = "Démasqué d'entrée. L'Agence ne retiendra pas votre nom.";
+  } else if (state.score < 5) {
+    msg = "Couverture grillée un peu vite, agent.";
+  } else if (state.score < 10) {
+    msg = "Belle infiltration, mais le terrain a eu raison de vous.";
+  } else if (state.score < 20) {
+    msg = "Agent confirmé : vous avez tenu un long moment.";
+  } else {
+    msg = "Légende du renseignement — un sang-froid remarquable.";
+  }
+  els.finalMessage.textContent = msg;
+}
+
 /* -------------------------------------------------------------------------
-   4) Interactions
+   5) Interactions
    ------------------------------------------------------------------------- */
 function onChoice(given) {
-  // Empêche un double-clic / une réponse déjà enregistrée
-  if (state.answers[state.current]) return;
+  if (state.answered) return; // déjà répondu à cette question
 
-  const q = todaysQuestions[state.current];
+  const q = currentQuestion();
   const isCorrect = given === q.type;
 
-  state.answers[state.current] = { id: q.id, given: given, correct: isCorrect };
+  state.answered = given;
   if (isCorrect) state.score++;
+  else state.lives--;
   saveState();
 
+  updateStatusBar(); // reflète immédiatement la vie perdue / le score gagné
   playAnswerSound(isCorrect);
   lockAndReveal(given, q);
 }
 
+function endGame() {
+  state.finished = true;
+  if (persist && state.score > best) {
+    best = state.score;
+    saveBest();
+  }
+  saveState();
+  if (state.lives > 0) playFanfare();
+  else playGameOver();
+  showFinalScreen();
+}
+
 function onNext() {
-  if (state.current >= sessionCount - 1) {
-    state.finished = true;
-    saveState();
-    showFinalScreen();
+  const isLast = state.pos >= state.order.length - 1;
+  if (state.lives <= 0 || isLast) {
+    endGame();
     return;
   }
-  state.current++;
+  state.pos++;
+  state.answered = null;
   saveState();
   renderQuestion();
 }
 
-/* -------------------------------------------------------------------------
-   5) Mode test (piloté par l'URL — sans effet pour les joueurs normaux)
+function onReplay() {
+  state = newGameState();
+  saveState();
+  els.finalScreen.hidden = true;
+  els.gameScreen.hidden = false;
+  renderQuestion();
+}
 
-   Paramètres reconnus :
-     ?all=1                  → défile TOUTES les questions du pool (relecture)
-     ?day=12345              → force un dayIndex précis (voir le triplet du jour)
-     ?pick=cia-007,fic-003   → ne teste que ces questions (dans cet ordre)
-   La présence de l'un d'eux active le mode test : aucune lecture/écriture
-   localStorage, et une bannière d'info s'affiche. Sans paramètre, le jeu se
-   comporte exactement comme en production.
+/* -------------------------------------------------------------------------
+   6) Mode test (piloté par l'URL — sans effet pour les joueurs normaux)
+     ?all=1                  → joue toutes les questions dans l'ordre du fichier
+     ?pick=cia-007,fic-003   → ne joue que ces questions (dans cet ordre)
+     ?test                   → partie fraîche sans sauvegarde
+   Active le mode test : aucune lecture/écriture localStorage + bannière.
    ------------------------------------------------------------------------- */
 function getTestConfig() {
   const p = new URLSearchParams(location.search);
   const all = p.has("all");
   const pickRaw = p.get("pick");
-  const dayRaw = p.get("day");
   const pick = pickRaw
     ? pickRaw.split(",").map((s) => s.trim()).filter(Boolean)
     : null;
-  const day =
-    dayRaw !== null && dayRaw.trim() !== "" && Number.isFinite(Number(dayRaw))
-      ? Math.floor(Number(dayRaw))
-      : null;
-  const enabled = all || (pick && pick.length > 0) || day !== null || p.has("test");
-  return { enabled, all, pick, day };
+  const enabled = all || (pick && pick.length > 0) || p.has("test");
+  return { enabled, all, pick };
 }
 
-function showTestBanner(mode, dayIndex) {
+function showTestBanner(label) {
   const bar = document.createElement("div");
   bar.style.cssText =
     "position:sticky;top:0;z-index:50;background:#7c2d12;color:#fff;" +
     "padding:.5rem .75rem;font-size:.8rem;text-align:center;border-bottom:2px solid #ea580c;";
-  const a = (href, label) =>
-    `<a style="color:#fde68a;text-decoration:underline" href="${href}">${label}</a>`;
+  const a = (href, l) =>
+    `<a style="color:#fde68a;text-decoration:underline" href="${href}">${l}</a>`;
   bar.innerHTML =
-    `🧪 <strong>MODE TEST</strong> — ${mode} · jour ${dayIndex} · ` +
-    `${a("?all=1", "toutes")} · ${a("?day=" + (dayIndex + 1), "jour +1")} · ` +
-    `${a("?day=" + dayIndex, "ce triplet")} · ${a(location.pathname, "quitter")} ` +
+    `🧪 <strong>MODE TEST</strong> — ${label} · ` +
+    `${a("?all=1", "toutes")} · ${a(location.pathname, "quitter")} ` +
     `<span style="opacity:.8">(aucune sauvegarde)</span>`;
   document.body.insertBefore(bar, document.body.firstChild);
 }
 
 /* -------------------------------------------------------------------------
-   6) Démarrage
+   7) Démarrage
    ------------------------------------------------------------------------- */
 function startApp() {
-  const test = getTestConfig();
-  const dayIndex = test.day !== null ? test.day : getDayIndex();
+  testCfg = getTestConfig();
 
-  // Sélection des questions selon le mode
-  if (test.all) {
-    todaysQuestions = pool.slice(); // toutes, dans l'ordre du fichier
-  } else if (test.pick && test.pick.length) {
-    todaysQuestions = test.pick
-      .map((id) => pool.find((q) => q.id === id))
-      .filter(Boolean);
-    if (!todaysQuestions.length) {
-      // aucun id valide → repli sur le triplet du jour
-      todaysQuestions = pickDailyIndices(dayIndex, pool.length, QUESTIONS_PER_DAY).map(
-        (i) => pool[i]
-      );
-    }
-  } else {
-    const idx = pickDailyIndices(dayIndex, pool.length, QUESTIONS_PER_DAY);
-    todaysQuestions = idx.map((i) => pool[i]);
-  }
-  sessionCount = todaysQuestions.length;
+  // Préférences persistantes
+  muted = loadMutePref();
+  updateMuteButton();
+  best = loadBest();
 
-  if (test.enabled) {
-    // Mode test : pas de persistance, partie toujours fraîche, bannière visible
+  // Écouteurs
+  if (els.btnMute) els.btnMute.addEventListener("click", toggleMute);
+  els.btnCia.addEventListener("click", () => onChoice("cia"));
+  els.btnFiction.addEventListener("click", () => onChoice("fiction"));
+  els.btnNext.addEventListener("click", onNext);
+  if (els.btnReplay) els.btnReplay.addEventListener("click", onReplay);
+
+  if (testCfg.enabled) {
     persist = false;
-    state = newGameState(dayIndex);
-    const label = test.all
-      ? "toutes les questions"
-      : test.pick && test.pick.length
-      ? "sélection (" + sessionCount + ")"
-      : "jour forcé";
-    showTestBanner(label, dayIndex);
+    state = newGameState();
+    const label = testCfg.pick && testCfg.pick.length
+      ? "sélection (" + state.order.length + ")"
+      : "toutes les questions";
+    showTestBanner(label);
   } else {
-    // Mode normal : reprise / nouvelle partie via localStorage
     const saved = loadState();
-    if (saved && saved.dayIndex === dayIndex) {
-      state = saved;
+    if (saved) {
+      state = saved; // reprise (en cours ou terminée)
     } else {
-      state = newGameState(dayIndex);
+      state = newGameState();
       saveState();
     }
   }
 
-  // Préférence son + branchement des écouteurs
-  muted = loadMutePref();
-  updateMuteButton();
-  if (els.btnMute) els.btnMute.addEventListener("click", toggleMute);
-
-  els.btnCia.addEventListener("click", () => onChoice("cia"));
-  els.btnFiction.addEventListener("click", () => onChoice("fiction"));
-  els.btnNext.addEventListener("click", onNext);
-
-  // Affiche le bon écran
-  if (state.finished) {
-    showFinalScreen();
-  } else {
-    renderQuestion();
-  }
+  if (state.finished) showFinalScreen();
+  else renderQuestion();
 }
 
 async function init() {
@@ -412,7 +434,7 @@ async function init() {
     const res = await fetch("data/questions.json", { cache: "no-cache" });
     if (!res.ok) throw new Error("HTTP " + res.status);
     pool = await res.json();
-    if (!Array.isArray(pool) || pool.length < QUESTIONS_PER_DAY) {
+    if (!Array.isArray(pool) || pool.length === 0) {
       throw new Error("Pool de questions invalide");
     }
     startApp();
