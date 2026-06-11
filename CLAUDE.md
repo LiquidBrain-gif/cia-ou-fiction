@@ -118,7 +118,7 @@ contient `.lives`), `#phrase`, `#choices`, `#btn-cia`, `#btn-fiction`, `#result`
 
 ## 8. État d'avancement
 
-- [x] Front complet (jeu, rotation, persistance, mode test, sons).
+- [x] Front complet (jeu 3 vies, persistance + record, mode test, sons).
 - [x] 40 questions remplies (CIA réelles vérifiées par Lucien + fictions confondables).
 - [x] Infra Terraform + deploy.sh + serve.ps1.
 - [x] README.md + RECAP.md.

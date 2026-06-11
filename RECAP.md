@@ -7,9 +7,10 @@
 
 ## 1. En une phrase
 
-Un jeu web quotidien type *Wordle* — deviner si un plan est un **vrai projet de la
-CIA** ou une **fiction** — entièrement statique, hébergé sur **AWS S3**, provisionné
-avec **Terraform** et déployé par un **script bash**.
+Un jeu web **arcade** type *Wordle* — deviner si un plan est un **vrai projet de la
+CIA** ou une **fiction**, avec un système de **3 vies** — entièrement statique,
+hébergé sur **AWS S3**, provisionné avec **Terraform** et déployé par un
+**script bash**.
 
 **🌐 Site en ligne :** http://cia-or-fiction-36efcf95.s3-website-us-east-1.amazonaws.com
 **📦 Dépôt GitHub :** https://github.com/LiquidBrain-gif/cia-ou-fiction
@@ -48,7 +49,7 @@ avec **Terraform** et déployé par un **script bash**.
 - **Aucun credential dans le code** : lecture de `~/.aws/credentials`.
 
 ### e) Outils dev
-- **Mode test** par URL (`?all=1`, `?day=N`, `?pick=`) : relit les phrases sans
+- **Mode test** par URL (`?all=1`, `?pick=ids`) : relit les phrases sans
   déployer, sans écrire dans `localStorage`. Invisible pour les joueurs.
 - **`serve.ps1`** : mini-serveur HTTP local (PowerShell, zéro dépendance).
 - **Sons** (Web Audio API) + bouton mute.
