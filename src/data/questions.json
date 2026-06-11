@@ -28,7 +28,7 @@
     "type": "cia",
     "phrase": "Administrer du LSD et d'autres substances à des sujets, parfois sans leur consentement, pour étudier les possibilités de contrôle du comportement humain.",
     "explication": "Projet « MKUltra » de la CIA (années 1950-1970) : vaste programme d'expérimentations sur le contrôle mental, dont l'essentiel des archives fut détruit en 1973, révélé par la commission Church en 1975.",
-    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/Projet_MK-Ultra",
+    "source": "https://fr.wikipedia.org/wiki/Projet_MK-Ultra",
     "_example": true
   },
   {
@@ -36,7 +36,7 @@
     "type": "cia",
     "phrase": "Mettre au point des méthodes d'interrogatoire combinant drogues, hypnose et privation sensorielle pour obtenir des aveux ou créer des agents sous contrôle.",
     "explication": "Projet « Artichoke » (1951), précurseur de MKUltra, consacré aux techniques d'interrogatoire « spéciales » et au contrôle de l'esprit.",
-    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/Projet_Artichoke",
+    "source": "https://fr.wikipedia.org/wiki/Projet_Artichoke",
     "_example": true
   },
   {
@@ -44,7 +44,7 @@
     "type": "cia",
     "phrase": "Aménager des appartements discrets où des inconnus, attirés sur place, étaient drogués à leur insu puis observés derrière un miroir sans tain.",
     "explication": "« Operation Midnight Climax », sous-programme de MKUltra : la CIA a observé les effets du LSD sur des sujets non consentants dans des planques de San Francisco et New York.",
-    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/Opération_Midnight_Climax",
+    "source": "https://fr.wikipedia.org/wiki/Opération_Midnight_Climax",
     "_example": true
   },
   {
@@ -52,7 +52,7 @@
     "type": "cia",
     "phrase": "Construire un navire civil géant, sous couvert d'exploitation minière des fonds marins financée par un milliardaire, pour renflouer en secret un sous-marin soviétique coulé.",
     "explication": "« Project Azorian » (1974) : à l'aide du Hughes Glomar Explorer, la CIA a tenté de récupérer le sous-marin soviétique K-129 par environ 5 000 m de fond. À l'origine de la formule « we can neither confirm nor deny ».",
-    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/Projet_Azorian",
+    "source": "https://fr.wikipedia.org/wiki/Projet_Azorian",
     "_example": true
   },
   {
@@ -60,7 +60,7 @@
     "type": "cia",
     "phrase": "Photographier le territoire adverse depuis l'espace et larguer les pellicules dans des capsules récupérées en plein vol par des avions.",
     "explication": "Programme « Corona » (1959-1972) : les premiers satellites de reconnaissance américains, dont les films étaient rapatriés dans des capsules attrapées en vol au-dessus du Pacifique.",
-    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/Corona_(satellite)",
+    "source": "https://fr.wikipedia.org/wiki/Corona_(satellite)",
     "_example": true
   },
   {
@@ -68,7 +68,7 @@
     "type": "cia",
     "phrase": "Développer un avion-espion volant à plus de trois fois la vitesse du son et à très haute altitude pour échapper aux missiles ennemis.",
     "explication": "Le Lockheed A-12 « Oxcart », avion de reconnaissance de la CIA conçu par les Skunk Works, ancêtre du SR-71 Blackbird.",
-    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/Lockheed_A-12",
+    "source": "https://fr.wikipedia.org/wiki/Lockheed_A-12",
     "_example": true
   },
   {
@@ -76,7 +76,7 @@
     "type": "cia",
     "phrase": "Constituer un stock secret de poisons et concevoir un pistolet tirant un dard glacé quasi indétectable, censé provoquer une crise cardiaque.",
     "explication": "Projet « MKNAOMI » : développement et stockage d'agents biologiques et toxiques par la CIA. Le « heart attack gun » fut présenté lors des auditions de la commission Church en 1975.",
-    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/MKNAOMI",
+    "source": "https://fr.wikipedia.org/wiki/MKNAOMI",
     "_example": true
   },
   {
@@ -84,7 +84,7 @@
     "type": "cia",
     "phrase": "Concevoir un drone de reconnaissance ayant l'apparence d'un oiseau pour survoler discrètement des sites sensibles.",
     "explication": "Projet « Aquiline » (fin des années 1960) : drone biomimétique imitant un oiseau, étudié par la CIA pour la collecte de renseignement. Documentation publique limitée.",
-    "source": "[À VÉRIFIER] https://en.wikipedia.org/wiki/Project_Aquiline (pas de page FR probable)",
+    "source": "https://en.wikipedia.org/wiki/Project_AQUILINE",
     "_example": true
   },
   {
@@ -92,23 +92,23 @@
     "type": "cia",
     "phrase": "Tenter d'éliminer un chef d'État étranger à l'aide d'un cigare piégé, d'une combinaison de plongée contaminée et de produits destinés à faire tomber sa barbe.",
     "explication": "Tentatives d'assassinat de Fidel Castro, notamment dans le cadre de l'« Operation Mongoose ». Ces projets rocambolesques ont été confirmés par la commission Church (1975).",
-    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/Opération_Mongoose",
+    "source": "https://fr.wikipedia.org/wiki/Opération_Mongoose",
     "_example": true
   },
   {
     "id": "cia-013",
     "type": "cia",
-    "phrase": "Creuser un tunnel secret sous la frontière d'une ville divisée pour se brancher sur les câbles téléphoniques de l'adversaire.",
+    "phrase": "Creuser un tunnel secret sous la frontière d'une ville pour se brancher sur les câbles téléphoniques de l'adversaire.",
     "explication": "« Operation Gold » (1955) : tunnel CIA/MI6 sous Berlin-Est pour intercepter les communications soviétiques. L'opération était en réalité connue des Soviétiques via la taupe George Blake.",
-    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/Opération_Gold",
+    "source": "https://fr.wikipedia.org/wiki/Opération_Gold",
     "_example": true
   },
   {
     "id": "cia-014",
     "type": "cia",
-    "phrase": "Déposer des agents par parachute sur une station polaire abandonnée puis les récupérer en vol grâce à un système de câble et de ballon.",
+    "phrase": "Déposer des agents par parachute puis les récupérer en vol grâce à un système de câble et de ballon.",
     "explication": "« Project Coldfeet » (1962) : des agents américains ont inspecté une station dérivante soviétique abandonnée dans l'Arctique, exfiltrés par le système Fulton (« skyhook »). Documentation publique limitée.",
-    "source": "[À VÉRIFIER] https://en.wikipedia.org/wiki/Project_Coldfeet (pas de page FR probable)",
+    "source": "https://en.wikipedia.org/wiki/Project_Coldfeet",
     "_example": true
   },
   {
@@ -116,7 +116,7 @@
     "type": "cia",
     "phrase": "Orchestrer en secret le renversement d'un gouvernement étranger élu, par la propagande, la corruption et le financement de manifestations.",
     "explication": "« Operation Ajax » (TPAJAX, 1953) : coup d'État organisé par la CIA et le MI6 contre le Premier ministre iranien Mohammad Mossadegh.",
-    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/Coup_d'État_de_1953_en_Iran",
+    "source": "https://fr.wikipedia.org/wiki/Coup_d'État_de_1953_en_Iran",
     "_example": true
   },
   {
@@ -124,7 +124,7 @@
     "type": "cia",
     "phrase": "Renverser un président élu à l'aide d'une fausse armée rebelle et d'une station de radio clandestine diffusant de fausses nouvelles.",
     "explication": "« Operation PBSuccess » (1954) : opération de la CIA ayant abouti au renversement du président guatémaltèque Jacobo Árbenz.",
-    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/Coup_d'État_de_1954_au_Guatemala",
+    "source": "https://fr.wikipedia.org/wiki/Coup_d'État_de_1954_au_Guatemala",
     "_example": true
   },
   {
@@ -132,7 +132,7 @@
     "type": "cia",
     "phrase": "Exploiter une compagnie aérienne d'apparence ordinaire servant en réalité de couverture à des opérations de transport clandestines en zone de guerre.",
     "explication": "« Air America » : compagnie aérienne secrètement détenue par la CIA, très active en Asie du Sud-Est pendant la guerre du Vietnam.",
-    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/Air_America_(compagnie_aérienne)",
+    "source": "https://en.wikipedia.org/wiki/Air_America_(airline)",
     "_example": true
   },
   {
@@ -140,7 +140,7 @@
     "type": "cia",
     "phrase": "Surveiller illégalement, sur le sol national, les militants pacifistes et les journalistes opposés à la guerre.",
     "explication": "« Operation CHAOS » (années 1960-1970) : programme de surveillance intérieure de la CIA visant le mouvement anti-guerre, pourtant hors de son mandat (limité à l'étranger).",
-    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/Opération_CHAOS",
+    "source": "https://fr.wikipedia.org/wiki/Opération_CHAOS",
     "_example": true
   },
   {
@@ -148,7 +148,7 @@
     "type": "cia",
     "phrase": "Faire voler très haut un avion de reconnaissance au-dessus du territoire adverse, jusqu'à ce que l'un d'eux soit abattu et déclenche une crise diplomatique.",
     "explication": "Programme « U-2 » : avion-espion de la CIA. L'appareil de Gary Powers, abattu au-dessus de l'URSS en 1960, provoqua une grave crise diplomatique.",
-    "source": "[À VÉRIFIER] https://fr.wikipedia.org/wiki/Lockheed_U-2",
+    "source": "https://fr.wikipedia.org/wiki/Lockheed_U-2",
     "_example": true
   },
   {
@@ -156,7 +156,7 @@
     "type": "cia",
     "phrase": "Compiler en interne un rapport secret recensant les activités illégales de l'agence : écoutes, filatures et projets d'assassinat.",
     "explication": "Les « Family Jewels » : rapport interne de la CIA (1973) listant ses activités illégales, déclassifié en 2007.",
-    "source": "[À VÉRIFIER] https://en.wikipedia.org/wiki/Family_Jewels_(Central_Intelligence_Agency) (page FR à confirmer)",
+    "source": "https://en.wikipedia.org/wiki/Family_Jewels_(Central_Intelligence_Agency)",
     "_example": true
   },
   {
