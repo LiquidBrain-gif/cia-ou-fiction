@@ -4,45 +4,75 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="CIA ou Fiction ? Devinez chaque jour si un plan a réellement existé ou s'il sort d'un film." />
-  <title>CIA ou Fiction ?</title>
+  <meta name="theme-color" content="#0d0c0a" />
+  <title>CIA ou Fiction ? — Dossier déclassifié</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Calques d'ambiance (grain de pellicule + vignette) -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
   <main class="app" id="app">
-    <header class="header">
-      <h1>🕵️ CIA ou Fiction&nbsp;?</h1>
-      <p class="subtitle">Vrai projet de la CIA, ou plan de méchant de cinéma&nbsp;? À vous de deviner.</p>
+    <button class="btn-mute" id="btn-mute" type="button" aria-pressed="false" aria-label="Couper ou activer le son" title="Son">🔊</button>
+
+    <!-- En-tête « agence » -->
+    <header class="masthead">
+      <p class="agency">★ CENTRAL INTELLIGENCE AGENCY ★</p>
+      <h1 class="title">CIA <em>ou</em> FICTION</h1>
+      <p class="subtitle">Vrai projet de l'Agence, ou plan de méchant de cinéma&nbsp;? Rendez votre verdict.</p>
+      <p class="classification" aria-hidden="true">// CLASSIFIÉ · NIVEAU CONFIDENTIEL · LECTURE SEULE //</p>
     </header>
 
     <!-- Indicateur de progression -->
-    <div class="progress" id="progress" aria-live="polite">Question 1 / 3</div>
+    <div class="progress" id="progress" aria-live="polite">PIÈCE 1 / 3</div>
 
-    <!-- Écran de jeu -->
-    <section class="card" id="game-screen">
-      <p class="phrase" id="phrase">Chargement…</p>
+    <!-- Dossier (écran de jeu) -->
+    <section class="card dossier" id="game-screen">
+      <div class="dossier-tab" aria-hidden="true">
+        <span class="ref">DOSSIER N° ██-04</span>
+        <span class="lvl">TRÈS SECRET</span>
+      </div>
+      <span class="stamp stamp-topsecret" aria-hidden="true">TOP&nbsp;SECRET</span>
+      <span class="punch punch-1" aria-hidden="true"></span>
+      <span class="punch punch-2" aria-hidden="true"></span>
 
-      <div class="choices" id="choices">
-        <button class="btn btn-choice" id="btn-cia" type="button" data-answer="cia">Projet CIA</button>
-        <button class="btn btn-choice" id="btn-fiction" type="button" data-answer="fiction">Plan fictif</button>
+      <p class="phrase" id="phrase">Décodage du dossier en cours…</p>
+
+      <div class="choices" id="choices" role="group" aria-label="Votre verdict">
+        <button class="btn btn-choice" id="btn-cia" type="button" data-answer="cia">
+          <span class="btn-tag" aria-hidden="true">DOSSIER&nbsp;RÉEL</span>
+          <span class="btn-label">Projet de la CIA</span>
+        </button>
+        <button class="btn btn-choice" id="btn-fiction" type="button" data-answer="fiction">
+          <span class="btn-tag" aria-hidden="true">PURE&nbsp;INTOX</span>
+          <span class="btn-label">Plan de fiction</span>
+        </button>
       </div>
 
-      <!-- Résultat affiché après réponse -->
+      <!-- Verdict révélé après réponse -->
       <div class="result" id="result" hidden>
         <p class="verdict" id="verdict"></p>
         <p class="explication" id="explication"></p>
         <p class="source-wrap">
-          <a class="source" id="source" href="#" target="_blank" rel="noopener">Voir la source ↗</a>
+          <a class="source" id="source" href="#" target="_blank" rel="noopener">Consulter la source ↗</a>
         </p>
-        <button class="btn btn-next" id="btn-next" type="button">Suivant →</button>
+        <button class="btn btn-next" id="btn-next" type="button">PIÈCE SUIVANTE →</button>
       </div>
     </section>
 
-    <!-- Écran final -->
+    <!-- Rapport final -->
     <section class="card final-screen" id="final-screen" hidden>
-      <h2>Partie du jour terminée&nbsp;!</h2>
+      <span class="stamp stamp-closed" aria-hidden="true">RAPPORT CLÔTURÉ</span>
+      <h2>Fin de l'interrogatoire</h2>
       <p class="score" id="final-score">Score : 0 / 3</p>
       <p class="final-message" id="final-message"></p>
-      <p class="come-back">Revenez demain pour 3 nouvelles phrases (rotation à minuit UTC).</p>
+      <p class="come-back">Nouveau dossier demain — rotation à minuit UTC.</p>
     </section>
 
     <footer class="footer">

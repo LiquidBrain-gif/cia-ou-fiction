@@ -24,6 +24,7 @@ const els = {
   btnNext: document.getElementById("btn-next"),
   finalScore: document.getElementById("final-score"),
   finalMessage: document.getElementById("final-message"),
+  btnMute: document.getElementById("btn-mute"),
 };
 
 /* État courant en mémoire */
@@ -69,6 +70,83 @@ function pickDailyIndices(dayIndex, total, count) {
     [indices[i], indices[j]] = [indices[j], indices[i]];
   }
   return indices.slice(0, count);
+}
+
+/* -------------------------------------------------------------------------
+   1bis) Sons (Web Audio API — générés à la volée, aucun fichier audio)
+   Un AudioContext est créé paresseusement au premier clic (geste utilisateur
+   requis par les navigateurs). La préférence muet est mémorisée séparément.
+   ------------------------------------------------------------------------- */
+const MUTE_KEY = "cia-or-fiction:muted";
+let audioCtx = null;       // null = pas encore créé, false = non supporté
+let muted = false;
+
+function loadMutePref() {
+  try {
+    return localStorage.getItem(MUTE_KEY) === "1";
+  } catch (e) {
+    return false;
+  }
+}
+
+function saveMutePref() {
+  try {
+    localStorage.setItem(MUTE_KEY, muted ? "1" : "0");
+  } catch (e) {
+    /* sans effet si indisponible */
+  }
+}
+
+function getAudioCtx() {
+  if (audioCtx === null) {
+    const Ctx = window.AudioContext || window.webkitAudioContext;
+    audioCtx = Ctx ? new Ctx() : false;
+  }
+  return audioCtx || null;
+}
+
+// Joue une note simple (oscillateur + enveloppe douce pour éviter les « clics »).
+function beep(freq, start, duration, type, peak) {
+  const ctx = getAudioCtx();
+  if (!ctx) return;
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+  osc.type = type;
+  osc.frequency.setValueAtTime(freq, start);
+  gain.gain.setValueAtTime(0.0001, start);
+  gain.gain.linearRampToValueAtTime(peak, start + 0.012);
+  gain.gain.exponentialRampToValueAtTime(0.0001, start + duration);
+  osc.connect(gain).connect(ctx.destination);
+  osc.start(start);
+  osc.stop(start + duration);
+}
+
+// Sons de réponse : bip ascendant joyeux si correct, note grave si incorrect.
+function playAnswerSound(correct) {
+  if (muted) return;
+  const ctx = getAudioCtx();
+  if (!ctx) return;
+  if (ctx.state === "suspended") ctx.resume();
+  const t = ctx.currentTime;
+  if (correct) {
+    beep(659.25, t, 0.12, "sine", 0.2); // mi
+    beep(987.77, t + 0.1, 0.22, "sine", 0.2); // si (plus aigu)
+  } else {
+    beep(196, t, 0.28, "square", 0.12); // sol grave
+    beep(146.83, t + 0.09, 0.3, "square", 0.1); // ré plus grave
+  }
+}
+
+function updateMuteButton() {
+  if (!els.btnMute) return;
+  els.btnMute.textContent = muted ? "🔇" : "🔊";
+  els.btnMute.setAttribute("aria-pressed", muted ? "true" : "false");
+}
+
+function toggleMute() {
+  muted = !muted;
+  saveMutePref();
+  updateMuteButton();
 }
 
 /* -------------------------------------------------------------------------
@@ -121,22 +199,22 @@ function newGameState(dayIndex) {
 function showFinalScreen() {
   els.gameScreen.hidden = true;
   els.finalScreen.hidden = false;
-  els.progress.textContent = "Terminé";
-  els.finalScore.textContent = `Score : ${state.score} / ${sessionCount}`;
+  els.progress.textContent = "CLÔTURÉ";
+  els.finalScore.textContent = `${state.score} / ${sessionCount}`;
 
   const messages = [
-    "Aïe… les services secrets ne vous recruteront pas tout de suite.",
-    "Pas mal, mais le réel dépasse parfois la fiction !",
-    "Beau score, vous démêlez bien le vrai du faux.",
-    "Sans faute ! Vous avez l'œil d'un véritable analyste.",
+    "Recrue recalée : le réel vous a tendu tous ses pièges.",
+    "Stagiaire prometteur, mais le terrain réserve des surprises.",
+    "Bon agent : vous démêlez l'intox du dossier authentique.",
+    "Analyste d'élite — sans faute, l'Agence vous remarque.",
   ];
-  els.finalMessage.textContent = messages[state.score] || "";
+  els.finalMessage.textContent = messages[state.score] || "Dossier clôturé.";
 }
 
 function renderQuestion() {
   const q = todaysQuestions[state.current];
 
-  els.progress.textContent = `Question ${state.current + 1} / ${sessionCount}`;
+  els.progress.textContent = `PIÈCE ${state.current + 1} / ${sessionCount}`;
   els.phrase.textContent = q.phrase;
 
   // Réinitialise les boutons de choix
@@ -170,7 +248,7 @@ function lockAndReveal(given, q) {
   }
 
   // Verdict (couleur + texte/icône pour ne pas dépendre que de la couleur)
-  els.verdict.textContent = isCorrect ? "✅ Correct" : "❌ Incorrect";
+  els.verdict.textContent = isCorrect ? "✓ EXACT" : "✗ ERREUR";
   els.verdict.className = "verdict " + (isCorrect ? "correct" : "incorrect");
 
   els.explication.textContent = q.explication;
@@ -188,7 +266,7 @@ function lockAndReveal(given, q) {
 
   // Bouton suivant ou fin
   els.btnNext.textContent =
-    state.current >= sessionCount - 1 ? "Voir mon score →" : "Suivant →";
+    state.current >= sessionCount - 1 ? "RAPPORT FINAL →" : "PIÈCE SUIVANTE →";
 
   els.result.hidden = false;
 }
@@ -207,6 +285,7 @@ function onChoice(given) {
   if (isCorrect) state.score++;
   saveState();
 
+  playAnswerSound(isCorrect);
   lockAndReveal(given, q);
 }
 
@@ -311,7 +390,11 @@ function startApp() {
     }
   }
 
-  // Branche les écouteurs
+  // Préférence son + branchement des écouteurs
+  muted = loadMutePref();
+  updateMuteButton();
+  if (els.btnMute) els.btnMute.addEventListener("click", toggleMute);
+
   els.btnCia.addEventListener("click", () => onChoice("cia"));
   els.btnFiction.addEventListener("click", () => onChoice("fiction"));
   els.btnNext.addEventListener("click", onNext);
