@@ -21,7 +21,7 @@ hébergé sur **AWS S3**, provisionné avec **Terraform** et déployé par un
 
 ### a) Le jeu (front-end statique)
 - **HTML / CSS / JavaScript vanilla**, une seule page, **aucun framework ni build**.
-- **Mode arcade à 3 vies** : les 40 questions s'enchaînent en **ordre mélangé**
+- **Mode arcade à 3 vies** : les questions s'enchaînent en **ordre mélangé**
   (Fisher-Yates), chaque erreur coûte **une vie** ; on continue tant qu'il reste
   des vies. Fin → **score + record + bouton Rejouer**.
 - **Persistance via `localStorage`** : reprise de partie en cours, **record**
@@ -32,7 +32,7 @@ hébergé sur **AWS S3**, provisionné avec **Terraform** et déployé par un
   victoire, descente « game over ». **Polices embarquées** (zéro dépendance).
 
 ### b) Les données — `src/data/questions.json`
-- **40 questions** : 20 « CIA » + 20 « fiction ».
+- **126 questions** : 63 « CIA » + 63 « fiction » (pool équilibré).
 - **20 opérations CIA réelles** et documentées, chacune avec un lien Wikipédia (FR
   privilégié).
 - **20 plans fictifs** formulés en style « fiche d'opération » sobre, **sans nom de

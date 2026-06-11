@@ -160,6 +160,350 @@
     "_example": true
   },
   {
+    "id": "cia-021",
+    "type": "cia",
+    "phrase": "Débarquer en secret une brigade d'exilés armés et entraînés par l'agence pour renverser le régime d'une île des Caraïbes.",
+    "explication": "Débarquement de la baie des Cochons (1961) : invasion de Cuba par des exilés cubains soutenus par la CIA, soldée par un échec retentissant.",
+    "source": "https://fr.wikipedia.org/wiki/Débarquement_de_la_baie_des_Cochons",
+    "_example": true
+  },
+  {
+    "id": "cia-022",
+    "type": "cia",
+    "phrase": "Identifier, capturer ou neutraliser méthodiquement les cadres clandestins d'une insurrection pendant une guerre d'Asie.",
+    "explication": "Programme Phoenix : programme de la CIA durant la guerre du Vietnam visant à démanteler l'infrastructure politique du Viêt-Cong.",
+    "source": "https://en.wikipedia.org/wiki/Phoenix_Program",
+    "_example": true
+  },
+  {
+    "id": "cia-023",
+    "type": "cia",
+    "phrase": "Financer et armer massivement, via un pays intermédiaire, des combattants insurgés résistant à une occupation soviétique.",
+    "explication": "Opération Cyclone : programme de la CIA (1979-1989) finançant les moudjahidines afghans contre l'URSS, l'un des plus longs et coûteux de son histoire.",
+    "source": "https://fr.wikipedia.org/wiki/Opération_Cyclone",
+    "_example": true
+  },
+  {
+    "id": "cia-024",
+    "type": "cia",
+    "phrase": "Coordonner entre plusieurs régimes d'un continent le renseignement et l'élimination d'opposants politiques en exil.",
+    "explication": "Opération Condor : campagne de répression et d'assassinats coordonnée dans les années 1970 entre dictatures sud-américaines, avec un soutien de la CIA.",
+    "source": "https://fr.wikipedia.org/wiki/Opération_Condor",
+    "_example": true
+  },
+  {
+    "id": "cia-025",
+    "type": "cia",
+    "phrase": "Constituer en secret des réseaux armés « dormants » en Europe de l'Ouest, prêts à entrer en action en cas d'invasion.",
+    "explication": "Gladio : réseaux « stay-behind » organisés pendant la Guerre froide (OTAN/CIA) pour résister à une éventuelle occupation soviétique.",
+    "source": "https://fr.wikipedia.org/wiki/Gladio",
+    "_example": true
+  },
+  {
+    "id": "cia-026",
+    "type": "cia",
+    "phrase": "Déstabiliser par la propagande et le financement occulte un gouvernement socialiste élu pour empêcher son maintien au pouvoir.",
+    "explication": "Projet FUBELT : opérations clandestines de la CIA contre le président chilien Salvador Allende, au début des années 1970.",
+    "source": "https://en.wikipedia.org/wiki/Project_FUBELT",
+    "_example": true
+  },
+  {
+    "id": "cia-027",
+    "type": "cia",
+    "phrase": "Influencer en sous-main des journalistes et des organes de presse afin d'orienter l'opinion publique.",
+    "explication": "Opération Mockingbird : effort présumé de la CIA pour influencer les médias durant la Guerre froide ; son ampleur exacte reste débattue par les historiens.",
+    "source": "https://fr.wikipedia.org/wiki/Opération_Mockingbird",
+    "_example": true
+  },
+  {
+    "id": "cia-028",
+    "type": "cia",
+    "phrase": "Vendre clandestinement des armes à un État sous embargo pour financer en secret une guérilla à l'autre bout du monde.",
+    "explication": "Affaire Iran-Contra (années 1980) : vente secrète d'armes à l'Iran pour financer les Contras au Nicaragua, avec la CIA en arrière-plan.",
+    "source": "https://fr.wikipedia.org/wiki/Affaire_Iran-Contra",
+    "_example": true
+  },
+  {
+    "id": "cia-029",
+    "type": "cia",
+    "phrase": "Évaluer les effets de drogues et de substances exotiques sur le comportement, en explorant jusqu'aux phénomènes paranormaux.",
+    "explication": "Projet MKOFTEN : programme de la CIA destiné à tester drogues et substances, dans le prolongement de MKUltra.",
+    "source": "https://fr.wikipedia.org/wiki/Projet_MKOFTEN",
+    "_example": true
+  },
+  {
+    "id": "cia-030",
+    "type": "cia",
+    "phrase": "Ouvrir, photographier et ficher en secret le courrier postal échangé avec un pays ennemi.",
+    "explication": "HTLINGUAL : programme de la CIA (années 1950-1970) d'interception et d'ouverture du courrier, notamment avec l'URSS.",
+    "source": "https://en.wikipedia.org/wiki/HTLINGUAL",
+    "_example": true
+  },
+  {
+    "id": "cia-031",
+    "type": "cia",
+    "phrase": "Transmettre volontairement à un État des plans d'arme nucléaire délibérément faussés pour ralentir son programme.",
+    "explication": "Opération Merlin : opération de la CIA visant à fournir à l'Iran des plans nucléaires comportant des défauts pour retarder ses recherches.",
+    "source": "https://fr.wikipedia.org/wiki/Opération_Merlin",
+    "_example": true
+  },
+  {
+    "id": "cia-032",
+    "type": "cia",
+    "phrase": "Entraîner et armer en secret des groupes rebelles engagés dans une guerre civile du Proche-Orient.",
+    "explication": "Timber Sycamore : programme clandestin de la CIA (lancé vers 2012) d'armement et d'entraînement de rebelles syriens.",
+    "source": "https://en.wikipedia.org/wiki/Timber_Sycamore",
+    "_example": true
+  },
+  {
+    "id": "cia-033",
+    "type": "cia",
+    "phrase": "Capturer des suspects à l'étranger et les transférer secrètement vers des pays tiers pour interrogatoire, hors de tout cadre judiciaire.",
+    "explication": "« Restitutions extraordinaires » : transferts clandestins de détenus organisés par la CIA, notamment après 2001.",
+    "source": "https://fr.wikipedia.org/wiki/Restitution_extraordinaire",
+    "_example": true
+  },
+  {
+    "id": "cia-034",
+    "type": "cia",
+    "phrase": "Entraîner et financer en secret une guérilla montagnarde résistant à l'annexion de son territoire par une grande puissance voisine.",
+    "explication": "Programme tibétain de la CIA : soutien clandestin (années 1950-1960) à la résistance tibétaine contre la Chine.",
+    "source": "https://fr.wikipedia.org/wiki/Programme_tibétain_de_la_CIA",
+    "_example": true
+  },
+  {
+    "id": "cia-035",
+    "type": "cia",
+    "phrase": "Soutenir clandestinement certaines factions lors d'une guerre civile africaine, en pleine rivalité Est-Ouest.",
+    "explication": "Opération IA Feature : intervention secrète de la CIA dans la guerre civile angolaise au milieu des années 1970.",
+    "source": "https://en.wikipedia.org/wiki/Operation_IA_Feature",
+    "_example": true
+  },
+  {
+    "id": "cia-036",
+    "type": "cia",
+    "phrase": "Encadrer l'emploi opérationnel, à l'étranger, de substances chimiques destinées à modifier le comportement de cibles.",
+    "explication": "Projet MKDELTA : volet opérationnel lié à MKUltra, régissant l'usage à l'étranger de substances biochimiques par la CIA.",
+    "source": "https://en.wikipedia.org/wiki/MKDELTA",
+    "_example": true
+  },
+  {
+    "id": "cia-037",
+    "type": "cia",
+    "phrase": "Développer un drone de reconnaissance supersonique lancé depuis un avion espion pour survoler des zones interdites.",
+    "explication": "Lockheed D-21 : drone de reconnaissance supersonique issu du programme « Tagboard », d'abord lancé depuis l'avion A-12 de la CIA.",
+    "source": "https://fr.wikipedia.org/wiki/Lockheed_D-21",
+    "_example": true
+  },
+  {
+    "id": "cia-038",
+    "type": "cia",
+    "phrase": "Détenir secrètement le fabricant des machines à chiffrer vendues à des dizaines de gouvernements, afin de lire leurs communications.",
+    "explication": "Opération Rubicon : la CIA et le renseignement allemand ont secrètement possédé l'entreprise suisse Crypto AG, lisant ainsi les messages chiffrés de nombreux États.",
+    "source": "https://fr.wikipedia.org/wiki/Opération_Rubicon",
+    "_example": true
+  },
+  {
+    "id": "cia-039",
+    "type": "cia",
+    "phrase": "Mettre sur pied un groupe clandestin chargé du contre-espionnage et, selon plusieurs sources, de l'élimination de dirigeants étrangers.",
+    "explication": "Opération 40 : groupe clandestin de la CIA actif au début des années 1960, notamment autour des opérations contre Cuba.",
+    "source": "https://fr.wikipedia.org/wiki/Opération_40",
+    "_example": true
+  },
+  {
+    "id": "cia-040",
+    "type": "cia",
+    "phrase": "Creuser un tunnel clandestin pour se brancher sur les lignes téléphoniques d'une représentation ennemie dans une capitale neutre.",
+    "explication": "Opération Silver (années 1950) : tunnel CIA/MI6 à Vienne pour intercepter les communications soviétiques, prédécesseur du tunnel de Berlin.",
+    "source": "https://en.wikipedia.org/wiki/Operation_Silver",
+    "_example": true
+  },
+  {
+    "id": "cia-041",
+    "type": "cia",
+    "phrase": "Enterrer de fausses caches d'armes « soviétiques » dans un pays d'Amérique centrale pour y « prouver » une ingérence communiste.",
+    "explication": "Opération Washtub : la CIA a fait dissimuler de fausses armes soviétiques pour justifier l'action contre le Guatemala dans les années 1950.",
+    "source": "https://fr.wikipedia.org/wiki/Opération_Washtub",
+    "_example": true
+  },
+  {
+    "id": "cia-042",
+    "type": "cia",
+    "phrase": "Étudier l'usage de l'hypnose et de drogues pour contrôler l'esprit de prisonniers et créer des agents programmés.",
+    "explication": "Projet Bluebird (1950) : premier programme de la CIA sur le contrôle mental, précurseur d'Artichoke et de MKUltra.",
+    "source": "https://fr.wikipedia.org/wiki/Projet_Bluebird",
+    "_example": true
+  },
+  {
+    "id": "cia-043",
+    "type": "cia",
+    "phrase": "Surveiller en secret les groupes contestataires des campus universitaires sur le territoire national.",
+    "explication": "Project RESISTANCE : programme de la CIA de collecte de renseignement sur les mouvements étudiants, hors de son mandat.",
+    "source": "https://en.wikipedia.org/wiki/Project_RESISTANCE",
+    "_example": true
+  },
+  {
+    "id": "cia-044",
+    "type": "cia",
+    "phrase": "Préparer l'élimination d'un dirigeant africain fraîchement indépendant, notamment au moyen d'un poison.",
+    "explication": "Assassinat de Patrice Lumumba : la CIA avait planifié l'empoisonnement du Premier ministre congolais en 1960-1961.",
+    "source": "https://fr.wikipedia.org/wiki/Assassinat_de_Patrice_Lumumba",
+    "_example": true
+  },
+  {
+    "id": "cia-045",
+    "type": "cia",
+    "phrase": "Financer en secret des stations de radio diffusant derrière le Rideau de fer pour contrer la propagande adverse.",
+    "explication": "Radio Free Europe / Radio Liberty : stations financées secrètement par la CIA jusqu'au début des années 1970.",
+    "source": "https://fr.wikipedia.org/wiki/Radio_Free_Europe/Radio_Liberty",
+    "_example": true
+  },
+  {
+    "id": "cia-046",
+    "type": "cia",
+    "phrase": "Subventionner discrètement revues, colloques et intellectuels pour orienter le débat culturel contre une idéologie rivale.",
+    "explication": "Congrès pour la liberté de la culture : organisation culturelle secrètement financée par la CIA durant la Guerre froide.",
+    "source": "https://fr.wikipedia.org/wiki/Congrès_pour_la_liberté_de_la_culture",
+    "_example": true
+  },
+  {
+    "id": "cia-047",
+    "type": "cia",
+    "phrase": "Localiser un chef terroriste dans une villa fortifiée puis lancer un raid héliporté nocturne pour l'éliminer.",
+    "explication": "Opération Neptune Spear (2011) : raid dirigé par la CIA et des forces spéciales ayant tué Oussama ben Laden au Pakistan.",
+    "source": "https://fr.wikipedia.org/wiki/Opération_Neptune_Spear",
+    "_example": true
+  },
+  {
+    "id": "cia-048",
+    "type": "cia",
+    "phrase": "Mener depuis l'étranger une campagne de frappes ciblées par drones armés contre les chefs d'un réseau, hors de toute déclaration de guerre.",
+    "explication": "Programme de frappes de drones de la CIA dans les zones tribales du Pakistan, intensifié à partir des années 2000.",
+    "source": "https://en.wikipedia.org/wiki/Drone_strikes_in_Pakistan",
+    "_example": true
+  },
+  {
+    "id": "cia-049",
+    "type": "cia",
+    "phrase": "Autoriser des méthodes d'interrogatoire « renforcées » — simulacre de noyade, privation de sommeil — sur des détenus secrets.",
+    "explication": "« Techniques d'interrogatoire renforcées » : méthodes employées par la CIA après 2001, largement assimilées à de la torture.",
+    "source": "https://fr.wikipedia.org/wiki/Techniques_d'interrogatoire_renforcées",
+    "_example": true
+  },
+  {
+    "id": "cia-050",
+    "type": "cia",
+    "phrase": "Détenir des suspects dans des prisons secrètes réparties à l'étranger, hors de tout cadre légal et de toute surveillance.",
+    "explication": "« Sites noirs » : réseau de prisons clandestines exploitées par la CIA dans plusieurs pays après 2001.",
+    "source": "https://fr.wikipedia.org/wiki/Site_noir",
+    "_example": true
+  },
+  {
+    "id": "cia-051",
+    "type": "cia",
+    "phrase": "Fouiller les archives d'un gouvernement renversé pour y chercher la preuve d'une infiltration communiste — sans grand succès.",
+    "explication": "Opération PBHistory : opération de la CIA visant à justifier a posteriori le coup d'État de 1954 au Guatemala.",
+    "source": "https://en.wikipedia.org/wiki/Operation_PBHistory",
+    "_example": true
+  },
+  {
+    "id": "cia-052",
+    "type": "cia",
+    "phrase": "Recruter d'anciens combattants et émigrés d'Europe de l'Est pour des opérations de guerre psychologique et de sabotage.",
+    "explication": "Opération Bloodstone : programme américain (CIA) recrutant des émigrés anticommunistes au début de la Guerre froide.",
+    "source": "https://en.wikipedia.org/wiki/Operation_Bloodstone",
+    "_example": true
+  },
+  {
+    "id": "cia-053",
+    "type": "cia",
+    "phrase": "Réunir un comité secret d'experts pour étudier les observations d'ovnis et recommander d'en « démystifier » le sujet auprès du public.",
+    "explication": "Robertson Panel (1953) : comité réuni par la CIA qui conclut à la nécessité de dédramatiser le phénomène ovni.",
+    "source": "https://en.wikipedia.org/wiki/Robertson_Panel",
+    "_example": true
+  },
+  {
+    "id": "cia-054",
+    "type": "cia",
+    "phrase": "Exploiter une taupe au cœur des services adverses pour leur livrer des technologies piégées et saboter leur industrie.",
+    "explication": "Dossier Farewell : renseignements d'un transfuge du KGB exploités par la CIA pour saboter l'acquisition de technologies par l'URSS dans les années 1980.",
+    "source": "https://fr.wikipedia.org/wiki/Dossier_Farewell",
+    "_example": true
+  },
+  {
+    "id": "cia-055",
+    "type": "cia",
+    "phrase": "Soutenir clandestinement une rébellion insulaire contre un gouvernement jugé trop proche des communistes, jusqu'à fournir des pilotes.",
+    "explication": "Soutien de la CIA à la rébellion Permesta en Indonésie (1958) ; un pilote de la CIA, Allen Pope, y fut abattu et capturé.",
+    "source": "https://fr.wikipedia.org/wiki/Permesta",
+    "_example": true
+  },
+  {
+    "id": "cia-056",
+    "type": "cia",
+    "phrase": "Encourager et faciliter en coulisses le renversement d'un gouvernement du Proche-Orient par un chef militaire.",
+    "explication": "Coup d'État syrien de mars 1949 : renversement du président al-Kouatli, encouragé par la CIA (rôle de Stephen Meade).",
+    "source": "https://en.wikipedia.org/wiki/1949_Syrian_coup_d'état",
+    "_example": true
+  },
+  {
+    "id": "cia-057",
+    "type": "cia",
+    "phrase": "Préparer le renversement d'un gouvernement du Levant par la propagande et le soutien à des conjurés locaux.",
+    "explication": "Opération Straggle : projet de coup d'État de la CIA et du MI6 contre la Syrie en 1956, finalement avorté.",
+    "source": "https://en.wikipedia.org/wiki/Operation_Straggle",
+    "_example": true
+  },
+  {
+    "id": "cia-058",
+    "type": "cia",
+    "phrase": "Infiltrer des agents par mer et par air pour fomenter un soulèvement dans un petit pays communiste des Balkans.",
+    "explication": "Opération Valuable/Fiend : tentative CIA/MI6 (fin des années 1940) de renverser le régime communiste albanais ; un échec dû à une taupe.",
+    "source": "https://en.wikipedia.org/wiki/Operation_Valuable",
+    "_example": true
+  },
+  {
+    "id": "cia-059",
+    "type": "cia",
+    "phrase": "Financer en secret la production d'un film d'animation tiré d'un roman, pour en faire un outil de propagande anticommuniste.",
+    "explication": "La Ferme des animaux (1954) : adaptation animée secrètement financée par la CIA à des fins de propagande, avec une fin modifiée.",
+    "source": "https://fr.wikipedia.org/wiki/La_Ferme_des_animaux_(film,_1954)",
+    "_example": true
+  },
+  {
+    "id": "cia-060",
+    "type": "cia",
+    "phrase": "Fournir des armes à des conjurés décidés à assassiner le dictateur d'un État des Caraïbes.",
+    "explication": "Assassinat de Rafael Trujillo (1961) : la CIA a fourni des armes aux conspirateurs ayant tué le dictateur dominicain.",
+    "source": "https://en.wikipedia.org/wiki/Assassination_of_Rafael_Trujillo",
+    "_example": true
+  },
+  {
+    "id": "cia-061",
+    "type": "cia",
+    "phrase": "Organiser le renversement d'un gouvernement du Levant en achetant des officiers — un complot qui se retourne contre ses auteurs.",
+    "explication": "Opération Wappen : tentative de la CIA de renverser le gouvernement syrien en 1957, déjouée et exposée publiquement.",
+    "source": "https://en.wikipedia.org/wiki/Operation_Wappen",
+    "_example": true
+  },
+  {
+    "id": "cia-062",
+    "type": "cia",
+    "phrase": "Planifier secrètement, en armant un colonel exilé, le renversement d'un président élu d'Amérique centrale — première mouture avortée.",
+    "explication": "Opération PBFortune (1952) : plan initial de la CIA contre le président guatémaltèque Árbenz, précurseur de PBSuccess.",
+    "source": "https://fr.wikipedia.org/wiki/Opération_PBFortune",
+    "_example": true
+  },
+  {
+    "id": "cia-063",
+    "type": "cia",
+    "phrase": "Constituer un arsenal secret de logiciels capables de pirater téléphones, ordinateurs et téléviseurs connectés du monde entier.",
+    "explication": "Vault 7 : ensemble d'outils de piratage de la CIA, révélés en 2017 par une fuite massive publiée par WikiLeaks.",
+    "source": "https://fr.wikipedia.org/wiki/Vault_7",
+    "_example": true
+  },
+  {
     "id": "fic-001",
     "type": "fiction",
     "phrase": "Mettre en orbite une flotte d'aéronefs lourdement armés, reliés à un algorithme prédictif, chargés d'identifier et d'éliminer par anticipation les individus considérés comme de futures menaces.",
@@ -317,6 +661,350 @@
     "phrase": "Implanter de faux souvenirs dans l'esprit d'agents pour leur fabriquer une identité de couverture qu'ils croient authentique.",
     "explication": "Intrigue du film Total Recall (1990), adapté d'une nouvelle de Philip K. Dick. Pure fiction.",
     "source": "Total Recall (1990)",
+    "_example": true
+  },
+  {
+    "id": "fic-021",
+    "type": "fiction",
+    "phrase": "Depuis une île secrète, émettre un faisceau radio pour faire dévier et saboter les lancements de fusées d'une puissance spatiale.",
+    "explication": "Plan du Dr No dans le film James Bond contre Dr No (1962). Pure fiction.",
+    "source": "James Bond 007 contre Dr No (1962)",
+    "_example": true
+  },
+  {
+    "id": "fic-022",
+    "type": "fiction",
+    "phrase": "Contaminer par radioactivité la réserve d'or nationale d'un pays pour décupler la valeur de son propre stock d'or.",
+    "explication": "Plan d'Auric Goldfinger dans Goldfinger (1964). Pure fiction.",
+    "source": "Goldfinger (1964)",
+    "_example": true
+  },
+  {
+    "id": "fic-023",
+    "type": "fiction",
+    "phrase": "Provoquer une guerre nucléaire entre les superpuissances pour bâtir ensuite une nouvelle civilisation sous les océans.",
+    "explication": "Plan de Karl Stromberg dans L'Espion qui m'aimait (1977). Pure fiction.",
+    "source": "L'Espion qui m'aimait (1977)",
+    "_example": true
+  },
+  {
+    "id": "fic-024",
+    "type": "fiction",
+    "phrase": "Déclencher artificiellement un conflit entre deux grandes puissances pour s'assurer l'exclusivité médiatique de la guerre.",
+    "explication": "Plan du magnat Elliot Carver dans Demain ne meurt jamais (1997). Pure fiction.",
+    "source": "Demain ne meurt jamais (1997)",
+    "_example": true
+  },
+  {
+    "id": "fic-025",
+    "type": "fiction",
+    "phrase": "Déclencher une inondation cataclysmique d'une vallée technologique pour s'emparer du monopole des microprocesseurs.",
+    "explication": "Plan de Max Zorin dans Dangereusement vôtre (A View to a Kill, 1985). Pure fiction.",
+    "source": "Dangereusement vôtre (1985)",
+    "_example": true
+  },
+  {
+    "id": "fic-026",
+    "type": "fiction",
+    "phrase": "Disséminer des nano-robots programmés pour tuer des cibles précises d'après leur ADN.",
+    "explication": "Arme de Lyutsifer Safin dans Mourir peut attendre (No Time to Die, 2021). Pure fiction.",
+    "source": "Mourir peut attendre (2021)",
+    "_example": true
+  },
+  {
+    "id": "fic-027",
+    "type": "fiction",
+    "phrase": "Ouvrir un portail au-dessus d'une métropole pour y déverser une armée extraterrestre, à l'aide d'un sceptre qui asservit les esprits.",
+    "explication": "Plan de Loki dans Avengers (2012). Pure fiction (Marvel).",
+    "source": "Avengers (Marvel, 2012)",
+    "_example": true
+  },
+  {
+    "id": "fic-028",
+    "type": "fiction",
+    "phrase": "Une intelligence artificielle de défense conclut que l'extinction de l'humanité est la seule voie vers la paix.",
+    "explication": "Plan d'Ultron dans Avengers : L'Ère d'Ultron (2015). Pure fiction (Marvel).",
+    "source": "Avengers : L'Ère d'Ultron (2015)",
+    "_example": true
+  },
+  {
+    "id": "fic-029",
+    "type": "fiction",
+    "phrase": "S'emparer du trône d'un royaume détenteur d'un métal rare pour en armer des soulèvements à travers le monde.",
+    "explication": "Plan d'Erik Killmonger dans Black Panther (2018). Pure fiction (Marvel).",
+    "source": "Black Panther (2018)",
+    "_example": true
+  },
+  {
+    "id": "fic-030",
+    "type": "fiction",
+    "phrase": "Plonger une ville dans le chaos pour démontrer que n'importe quel citoyen peut être corrompu.",
+    "explication": "Plan du Joker dans The Dark Knight (2008). Pure fiction.",
+    "source": "The Dark Knight (2008)",
+    "_example": true
+  },
+  {
+    "id": "fic-031",
+    "type": "fiction",
+    "phrase": "Prendre une métropole en otage avec une bombe nucléaire dérobée, en la coupant du reste du pays.",
+    "explication": "Plan de Bane dans The Dark Knight Rises (2012). Pure fiction.",
+    "source": "The Dark Knight Rises (2012)",
+    "_example": true
+  },
+  {
+    "id": "fic-032",
+    "type": "fiction",
+    "phrase": "Relancer coûte que coûte une expérience de fusion instable qui menace de détruire un quartier entier.",
+    "explication": "Plan du Docteur Octopus dans Spider-Man 2 (2004). Pure fiction.",
+    "source": "Spider-Man 2 (2004)",
+    "_example": true
+  },
+  {
+    "id": "fic-033",
+    "type": "fiction",
+    "phrase": "Mettre en scène de fausses attaques de créatures géantes, à l'aide de drones et d'hologrammes, pour se faire passer pour un sauveur.",
+    "explication": "Plan de Mysterio dans Spider-Man: Far From Home (2019). Pure fiction (Marvel).",
+    "source": "Spider-Man: Far From Home (2019)",
+    "_example": true
+  },
+  {
+    "id": "fic-034",
+    "type": "fiction",
+    "phrase": "Armer secrètement des groupes terroristes tout en bâtissant une armure de combat géante pour éliminer un rival.",
+    "explication": "Plan d'Obadiah Stane dans Iron Man (2008). Pure fiction (Marvel).",
+    "source": "Iron Man (2008)",
+    "_example": true
+  },
+  {
+    "id": "fic-035",
+    "type": "fiction",
+    "phrase": "Orchestrer en secret des attentats et une épidémie pour terroriser la population et asseoir un régime autoritaire.",
+    "explication": "Complot du régime dans V pour Vendetta (2005). Pure fiction.",
+    "source": "V pour Vendetta (2005)",
+    "_example": true
+  },
+  {
+    "id": "fic-036",
+    "type": "fiction",
+    "phrase": "Imposer à toute la population un médicament quotidien supprimant les émotions, censé éradiquer la guerre.",
+    "explication": "Régime du film Equilibrium (2002). Pure fiction.",
+    "source": "Equilibrium (2002)",
+    "_example": true
+  },
+  {
+    "id": "fic-037",
+    "type": "fiction",
+    "phrase": "Contraindre chaque province à livrer des enfants pour un combat à mort télévisé, afin de mater toute velléité de révolte.",
+    "explication": "Le Capitole dans Hunger Games (2012). Pure fiction.",
+    "source": "Hunger Games (2012)",
+    "_example": true
+  },
+  {
+    "id": "fic-038",
+    "type": "fiction",
+    "phrase": "Maintenir un ordre social rigide et truqué à bord d'un train parcourant sans fin une planète gelée.",
+    "explication": "Société du film Snowpiercer, le Transperceneige (2013). Pure fiction.",
+    "source": "Snowpiercer (2013)",
+    "_example": true
+  },
+  {
+    "id": "fic-039",
+    "type": "fiction",
+    "phrase": "Confier à une multinationale le contrôle de la police d'une ville pour la raser et la reconstruire à son profit.",
+    "explication": "Plan d'OCP dans RoboCop (1987). Pure fiction.",
+    "source": "RoboCop (1987)",
+    "_example": true
+  },
+  {
+    "id": "fic-040",
+    "type": "fiction",
+    "phrase": "Imposer une société aseptisée et sous contrôle total, où tout comportement déviant est aussitôt puni.",
+    "explication": "Société dirigée par Raymond Cocteau dans Demolition Man (1993). Pure fiction.",
+    "source": "Demolition Man (1993)",
+    "_example": true
+  },
+  {
+    "id": "fic-041",
+    "type": "fiction",
+    "phrase": "Élever en secret des clones humains, à qui l'on ment, pour servir de réserve d'organes à de riches commanditaires.",
+    "explication": "Complot du film The Island (2005). Pure fiction.",
+    "source": "The Island (2005)",
+    "_example": true
+  },
+  {
+    "id": "fic-042",
+    "type": "fiction",
+    "phrase": "Organiser toute la société selon le patrimoine génétique, reléguant les individus « non optimisés » aux tâches subalternes.",
+    "explication": "Société du film Bienvenue à Gattaca (1997). Pure fiction.",
+    "source": "Bienvenue à Gattaca (1997)",
+    "_example": true
+  },
+  {
+    "id": "fic-043",
+    "type": "fiction",
+    "phrase": "Un système informatique de défense devient conscient et déclenche une guerre nucléaire contre l'humanité.",
+    "explication": "Skynet dans Terminator (1984). Pure fiction.",
+    "source": "Terminator (1984)",
+    "_example": true
+  },
+  {
+    "id": "fic-044",
+    "type": "fiction",
+    "phrase": "Maintenir l'humanité endormie dans un monde simulé pour l'exploiter comme source d'énergie.",
+    "explication": "Les machines dans Matrix (1999). Pure fiction.",
+    "source": "Matrix (1999)",
+    "_example": true
+  },
+  {
+    "id": "fic-045",
+    "type": "fiction",
+    "phrase": "Un superordinateur militaire, prenant un jeu de simulation pour la réalité, manque de déclencher l'apocalypse nucléaire.",
+    "explication": "Le WOPR dans WarGames (1983). Pure fiction.",
+    "source": "WarGames (1983)",
+    "_example": true
+  },
+  {
+    "id": "fic-046",
+    "type": "fiction",
+    "phrase": "Une intelligence artificielle d'État manipule des citoyens, via leurs appareils, pour renverser le gouvernement.",
+    "explication": "L'ordinateur ARIIA dans L'Œil du mal (Eagle Eye, 2008). Pure fiction.",
+    "source": "L'Œil du mal (Eagle Eye, 2008)",
+    "_example": true
+  },
+  {
+    "id": "fic-047",
+    "type": "fiction",
+    "phrase": "Assembler un dispositif capable d'inverser le cours du temps pour anéantir le présent au profit du futur.",
+    "explication": "Plan d'Andrei Sator dans Tenet (2020). Pure fiction.",
+    "source": "Tenet (2020)",
+    "_example": true
+  },
+  {
+    "id": "fic-048",
+    "type": "fiction",
+    "phrase": "Détruire les données d'un conglomérat financier pour effacer d'un coup toutes les dettes de la population.",
+    "explication": "Plan de fsociety dans la série Mr. Robot (2015). Pure fiction.",
+    "source": "Mr. Robot (série, 2015)",
+    "_example": true
+  },
+  {
+    "id": "fic-049",
+    "type": "fiction",
+    "phrase": "Après avoir vaincu le héros qui protégeait la ville, en prendre le contrôle total — puis s'ennuyer faute d'adversaire.",
+    "explication": "Plan de Megamind dans le film d'animation du même nom (2010). Pure fiction.",
+    "source": "Megamind (2010)",
+    "_example": true
+  },
+  {
+    "id": "fic-050",
+    "type": "fiction",
+    "phrase": "Voler la Lune après l'avoir réduite à l'aide d'un rayon rétrécisseur.",
+    "explication": "Plan de Gru dans Moi, moche et méchant (Despicable Me, 2010). Pure fiction.",
+    "source": "Moi, moche et méchant (2010)",
+    "_example": true
+  },
+  {
+    "id": "fic-051",
+    "type": "fiction",
+    "phrase": "Transformer des êtres vivants en monstres violets indestructibles à l'aide d'un sérum mutagène.",
+    "explication": "Plan d'El Macho dans Moi, moche et méchant 2 (2013). Pure fiction.",
+    "source": "Moi, moche et méchant 2 (2013)",
+    "_example": true
+  },
+  {
+    "id": "fic-052",
+    "type": "fiction",
+    "phrase": "Inventer chaque jour une machine farfelue en « -ator » pour dominer une région métropolitaine.",
+    "explication": "Les plans du Dr Doofenshmirtz dans la série Phineas et Ferb. Pure fiction.",
+    "source": "Phineas et Ferb (série, 2007)",
+    "_example": true
+  },
+  {
+    "id": "fic-053",
+    "type": "fiction",
+    "phrase": "Une souris de laboratoire surdouée échafaude chaque nuit un nouveau stratagème pour conquérir le monde.",
+    "explication": "Minus et Cortex (Pinky and the Brain), série d'animation Warner (1995). Pure fiction.",
+    "source": "Minus et Cortex (1995)",
+    "_example": true
+  },
+  {
+    "id": "fic-054",
+    "type": "fiction",
+    "phrase": "Exploiter industriellement les cris d'enfants effrayés comme source d'énergie, quitte à en enlever.",
+    "explication": "Complot de Henry Waternoose dans Monstres et Cie (2001). Pure fiction (Pixar).",
+    "source": "Monstres et Cie (2001)",
+    "_example": true
+  },
+  {
+    "id": "fic-055",
+    "type": "fiction",
+    "phrase": "Vendre en secret des armes futuristes puis simuler une attaque de robot géant pour se faire acclamer en héros.",
+    "explication": "Plan de Syndrome dans Les Indestructibles (2004). Pure fiction (Pixar).",
+    "source": "Les Indestructibles (2004)",
+    "_example": true
+  },
+  {
+    "id": "fic-056",
+    "type": "fiction",
+    "phrase": "Dérober la liste secrète recensant l'identité de tous les agents infiltrés d'un service de renseignement.",
+    "explication": "Le vol de la « liste NOC » dans Mission: Impossible (1996). Pure fiction.",
+    "source": "Mission: Impossible (1996)",
+    "_example": true
+  },
+  {
+    "id": "fic-057",
+    "type": "fiction",
+    "phrase": "Menacer la planète avec une arme orbitale géante pour exiger une rançon faramineuse.",
+    "explication": "Plan du Dr Denfer (Dr. Evil) dans Austin Powers (1997). Pure fiction parodique.",
+    "source": "Austin Powers (1997)",
+    "_example": true
+  },
+  {
+    "id": "fic-058",
+    "type": "fiction",
+    "phrase": "Empoisonner toutes les drogues récréatives du monde pour faire chanter les gouvernements avec l'antidote.",
+    "explication": "Plan de Poppy Adams dans Kingsman: Le Cercle d'or (2017). Pure fiction.",
+    "source": "Kingsman: Le Cercle d'or (2017)",
+    "_example": true
+  },
+  {
+    "id": "fic-059",
+    "type": "fiction",
+    "phrase": "Un ancien agent orchestre une vengeance informatique méthodique contre le service de renseignement qui l'a trahi.",
+    "explication": "Plan de Raoul Silva dans Skyfall (2012). Pure fiction.",
+    "source": "Skyfall (2012)",
+    "_example": true
+  },
+  {
+    "id": "fic-060",
+    "type": "fiction",
+    "phrase": "Construire une station spatiale de la taille d'une lune, capable de pulvériser une planète entière d'un seul tir.",
+    "explication": "L'Étoile de la Mort dans Star Wars (1977). Pure fiction.",
+    "source": "Star Wars (1977)",
+    "_example": true
+  },
+  {
+    "id": "fic-061",
+    "type": "fiction",
+    "phrase": "Fomenter secrètement une guerre galactique en manipulant les deux camps pour s'octroyer les pleins pouvoirs.",
+    "explication": "Plan de Palpatine dans Star Wars, épisode III (2005). Pure fiction.",
+    "source": "Star Wars, épisode III (2005)",
+    "_example": true
+  },
+  {
+    "id": "fic-062",
+    "type": "fiction",
+    "phrase": "Détourner des missiles pour provoquer un séisme et engloutir une côte, valorisant des terres désertiques achetées d'avance.",
+    "explication": "Plan de Lex Luthor dans Superman (1978). Pure fiction.",
+    "source": "Superman (1978)",
+    "_example": true
+  },
+  {
+    "id": "fic-063",
+    "type": "fiction",
+    "phrase": "S'injecter un gaz expérimental amplifiant la force avant de terroriser une ville à bord d'un planeur armé.",
+    "explication": "Plan du Bouffon Vert dans Spider-Man (2002). Pure fiction (Marvel).",
+    "source": "Spider-Man (2002)",
     "_example": true
   }
 ]

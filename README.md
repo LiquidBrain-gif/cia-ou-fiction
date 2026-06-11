@@ -20,7 +20,7 @@ et une **source** (lien Wikipédia pour les opérations CIA).
 **Mode de jeu — arcade à 3 vies.** Les questions s'enchaînent dans un ordre
 mélangé. Chaque **bonne réponse** rapporte 1 point ; chaque **erreur** coûte
 **une vie**. Tant qu'il reste des vies, le joueur continue. À **0 vie** (ou après
-avoir passé les 40 questions), la partie s'arrête : le **score** et le **record**
+avoir passé toutes les questions), la partie s'arrête : le **score** et le **record**
 s'affichent, avec un bouton **Rejouer**. Vies et record sont mémorisés en
 `localStorage`.
 
@@ -64,7 +64,7 @@ S3 bucket (static website hosting, us-east-1, lecture publique)
 │   ├── app.js
 │   ├── fonts/                # polices embarquées (Special Elite, IBM Plex Mono)
 │   └── data/
-│       └── questions.json    # les 40 questions
+│       └── questions.json    # les 126 questions (63 CIA + 63 fiction)
 └── infra/                    # Terraform
     ├── main.tf
     ├── variables.tf
@@ -143,8 +143,8 @@ relancez `./deploy.sh`. C'est tout.
 
 ## ✏️ Ajouter / éditer des questions
 
-Toutes les questions vivent dans **`src/data/questions.json`** : un tableau de
-**40 objets** (20 `cia` + 20 `fiction`).
+Toutes les questions vivent dans **`src/data/questions.json`** : un tableau
+d'objets **équilibré** entre `cia` et `fiction` (actuellement 63 + 63 = 126).
 
 ```json
 {
@@ -186,7 +186,7 @@ Pour relire/tester les phrases sans déployer :
 
    | URL | Effet |
    | --- | --- |
-   | `http://localhost:8000/?all=1` | Joue **les 40 questions** dans l'ordre du fichier (relecture complète) |
+   | `http://localhost:8000/?all=1` | Joue **toutes les questions** dans l'ordre du fichier (relecture complète) |
    | `http://localhost:8000/?pick=cia-007,fic-003` | Ne joue **que ces questions**, dans cet ordre |
 
    Une bannière « 🧪 MODE TEST » s'affiche en haut (raccourcis : toutes / quitter).
