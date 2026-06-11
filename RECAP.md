@@ -1,0 +1,114 @@
+# 📋 Récapitulatif du projet — « CIA ou Fiction ? »
+
+> Document de synthèse : ce qui a été réalisé, comment, et ce qu'il reste à faire.
+> Auteurs : Lucien VALVERDE & Rafik ZEMOURI — Master Cybersécurité IPSSI.
+
+---
+
+## 1. En une phrase
+
+Un jeu web quotidien type *Wordle* — deviner si un plan est un **vrai projet de la
+CIA** ou une **fiction** — entièrement statique, hébergé sur **AWS S3**, provisionné
+avec **Terraform** et déployé par un **script bash**.
+
+**🌐 Site en ligne :** http://cia-or-fiction-36efcf95.s3-website-us-east-1.amazonaws.com
+**📦 Dépôt GitHub :** https://github.com/LiquidBrain-gif/cia-ou-fiction
+
+---
+
+## 2. Ce qui a été réalisé
+
+### a) Le jeu (front-end statique)
+- **HTML / CSS / JavaScript vanilla**, une seule page, **aucun framework ni build**.
+- **3 questions par jour**, tirées du pool de 40 de façon **déterministe** : même
+  triplet pour tous les joueurs un jour donné, rotation à minuit UTC.
+  - Implémentation : PRNG **mulberry32** seedé par le numéro du jour
+    (`dayIndex = floor(Date.now() / 86 400 000)`) + mélange de Fisher-Yates partiel.
+- **Persistance via `localStorage`** : reprise de partie, écran final verrouillé,
+  nouvelle partie au changement de jour, gestion des données corrompues (`try/catch`).
+- **UI** « dossier déclassifié » responsive, indicateur de progression,
+  correct/incorrect distingués par **couleur + texte/tampon** (accessibilité).
+
+### b) Les données — `src/data/questions.json`
+- **40 questions** : 20 « CIA » + 20 « fiction ».
+- **20 opérations CIA réelles** et documentées, chacune avec un lien Wikipédia (FR
+  privilégié).
+- **20 plans fictifs** formulés en style « fiche d'opération » sobre, **sans nom de
+  film dans la phrase** — pour qu'on puisse les confondre avec de vraies opérations.
+
+### c) L'infrastructure — Terraform (`infra/`)
+- Provider **AWS**, région **us-east-1**.
+- Bucket S3 + website configuration + public access (lecture publique) + bucket policy
+  `s3:GetObject`. Nom de bucket unique via `random_id`.
+- **Aucun IAM créé** (interdit en AWS Academy). State **local**, versions épinglées.
+
+### d) Le déploiement — `deploy.sh`
+- Déploiement **en une commande** : `terraform apply` → `aws s3 sync ./src --delete`.
+- **Aucun credential dans le code** : lecture de `~/.aws/credentials`.
+
+### e) Outils dev
+- **Mode test** par URL (`?all=1`, `?day=N`, `?pick=`) : relit les phrases sans
+  déployer, sans écrire dans `localStorage`. Invisible pour les joueurs.
+- **`serve.ps1`** : mini-serveur HTTP local (PowerShell, zéro dépendance).
+- **Sons** (Web Audio API) + bouton mute.
+
+### f) Documentation
+- **`README.md`** (doc utilisateur), **`CLAUDE.md`** (historique/contexte technique),
+  **`RECAP.md`** (ce document).
+
+---
+
+## 3. Architecture
+
+```
+Navigateur (HTML/CSS/JS + localStorage)
+        │  (HTTP)
+        ▼
+S3 bucket (static website hosting, us-east-1, lecture publique)
+        ▲
+        │  terraform apply + aws s3 sync
+   deploy.sh  (lit ~/.aws/credentials)
+```
+
+---
+
+## 4. Choix techniques & justifications (pour l'oral)
+
+| Choix | Pourquoi |
+| --- | --- |
+| **JS vanilla, pas de framework** | Simplicité, maintenabilité, facile à expliquer ; aucun build. |
+| **S3 static website hosting** | Hébergement statique simple et quasi gratuit ; pas de serveur. |
+| **Terraform (state local)** | Infrastructure reproductible (IaC) ; state local assumé. |
+| **Script bash, pas de CI/CD** | Credentials Academy renouvelés toutes les ~4 h → secrets de pipeline ingérables. |
+| **`localStorage`, pas de backend** | Aucune donnée sensible, aucun serveur ; état chez le joueur. |
+| **Rotation déterministe (PRNG seedé)** | Même jeu pour tous chaque jour, sans backend, juste avec la date. |
+
+---
+
+## 5. Limites assumées
+
+- **Pas de HTTPS** (S3 website seul ; HTTPS via Cloudflare = hors scope).
+- **State Terraform local**, **pas de CI/CD**, **pas d'IAM/CloudFront/Route 53/ACM**
+  (non disponibles en AWS Academy).
+
+---
+
+## 6. Sécurité & coûts
+
+- Bucket en **lecture publique uniquement** (`s3:GetObject`).
+- **Aucune donnée sensible** ; état joueur local.
+- **Aucun credential** dans le dépôt.
+- **Coûts quasi nuls** (quelques Ko servis depuis S3).
+
+---
+
+## 7. Déployer / mettre à jour (mémo)
+
+```bash
+# 1. Rafraîchir les credentials Academy dans ~/.aws/credentials (3 lignes)
+aws sts get-caller-identity          # vérifier
+./deploy.sh                          # déploiement complet (Git Bash)
+# ou, bucket déjà créé, synchro rapide :
+aws s3 sync ./src s3://cia-or-fiction-36efcf95 --delete
+```
+Versionner : `git add -A && git commit -m "..." && git push`
