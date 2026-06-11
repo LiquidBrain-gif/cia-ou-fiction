@@ -58,7 +58,7 @@
   {
     "id": "cia-008",
     "type": "cia",
-    "phrase": "Photographier le territoire adverse depuis l'espace et larguer les pellicules dans des capsules récupérées en plein vol par des avions.",
+    "phrase": "Photographier en secret le territoire adverse depuis de très hautes altitudes et récupérer les pellicules larguées dans des capsules attrapées en plein vol par des avions.",
     "explication": "Programme « Corona » (1959-1972) : les premiers satellites de reconnaissance américains, dont les films étaient rapatriés dans des capsules attrapées en vol au-dessus du Pacifique.",
     "source": "https://fr.wikipedia.org/wiki/Corona_(satellite)",
     "_example": true
@@ -116,7 +116,7 @@
     "type": "cia",
     "phrase": "Orchestrer en secret le renversement d'un gouvernement étranger élu, par la propagande, la corruption et le financement de manifestations.",
     "explication": "« Operation Ajax » (TPAJAX, 1953) : coup d'État organisé par la CIA et le MI6 contre le Premier ministre iranien Mohammad Mossadegh.",
-    "source": "https://fr.wikipedia.org/wiki/Coup_d'État_de_1953_en_Iran",
+    "source": "https://fr.wikipedia.org/wiki/Opération_Ajax",
     "_example": true
   },
   {
@@ -594,7 +594,7 @@
   {
     "id": "fic-001",
     "type": "fiction",
-    "phrase": "Mettre en orbite une flotte d'aéronefs lourdement armés, reliés à un algorithme prédictif, chargés d'identifier et d'éliminer par anticipation les individus considérés comme de futures menaces.",
+    "phrase": "Déployer une flotte d'aéronefs lourdement armés, reliés à un algorithme prédictif, chargés d'identifier et d'éliminer par anticipation les individus considérés comme de futures menaces.",
     "explication": "Plan « Project Insight » de l'organisation Hydra dans Captain America: Le Soldat de l'hiver (2014). Pure fiction du Marvel Cinematic Universe.",
     "source": "Captain America: Le Soldat de l'hiver (Marvel, 2014)",
     "_example": true
@@ -602,7 +602,7 @@
   {
     "id": "fic-002",
     "type": "fiction",
-    "phrase": "Distribuer gratuitement à toute la population des cartes SIM émettant un signal capable de déclencher des accès de violence incontrôlable, afin de réduire le nombre d'habitants de la planète.",
+    "phrase": "Distribuer gratuitement à toute la population des cartes SIM émettant un signal capable de déclencher des accès de violence incontrôlable, afin de réduire drastiquement la population mondiale.",
     "explication": "Plan de Richmond Valentine dans Kingsman: Services secrets (2014). Pure fiction.",
     "source": "Kingsman: Services secrets (2014)",
     "_example": true
@@ -610,7 +610,7 @@
   {
     "id": "fic-003",
     "type": "fiction",
-    "phrase": "Prendre le contrôle d'un réseau de satellites de régulation du climat pour provoquer à volonté tempêtes, gels et catastrophes naturelles sur des cibles précises.",
+    "phrase": "Prendre le contrôle d'un réseau secret de régulation du climat pour provoquer à volonté tempêtes, gels et catastrophes naturelles sur des cibles précises.",
     "explication": "Intrigue du film Geostorm (2017) : un réseau de satellites censé maîtriser le climat est détourné comme arme. Pure fiction.",
     "source": "Geostorm (2017)",
     "_example": true
@@ -642,7 +642,7 @@
   {
     "id": "fic-007",
     "type": "fiction",
-    "phrase": "Détourner une arme orbitale capable d'émettre une impulsion électromagnétique pour paralyser les systèmes électroniques d'un pays et effacer ses archives financières.",
+    "phrase": "Détourner une arme secrète capable d'émettre une impulsion électromagnétique pour paralyser les systèmes électroniques d'un pays et effacer ses archives financières.",
     "explication": "Intrigue du film GoldenEye (1995), avec le satellite-arme du même nom. Pure fiction.",
     "source": "GoldenEye (James Bond, 1995)",
     "_example": true
@@ -666,7 +666,7 @@
   {
     "id": "fic-010",
     "type": "fiction",
-    "phrase": "Disperser depuis une station orbitale une toxine mortelle pour éliminer la population de la Terre et la remplacer par une élite sélectionnée.",
+    "phrase": "Disperser depuis une base secrète une toxine mortelle pour éliminer la population mondiale et la remplacer par une élite triée sur le volet.",
     "explication": "Plan de Hugo Drax dans Moonraker (1979). Pure fiction.",
     "source": "Moonraker (James Bond, 1979)",
     "_example": true
@@ -754,7 +754,7 @@
   {
     "id": "fic-021",
     "type": "fiction",
-    "phrase": "Depuis une île secrète, émettre un faisceau radio pour faire dévier et saboter les lancements de fusées d'une puissance spatiale.",
+    "phrase": "Depuis une base insulaire secrète, émettre un faisceau radio pour faire dévier et saboter les lancements de missiles d'une grande puissance.",
     "explication": "Plan du Dr No dans le film James Bond contre Dr No (1962). Pure fiction.",
     "source": "James Bond 007 contre Dr No (1962)",
     "_example": true
@@ -802,7 +802,7 @@
   {
     "id": "fic-027",
     "type": "fiction",
-    "phrase": "Ouvrir un portail au-dessus d'une métropole pour y déverser une armée extraterrestre, à l'aide d'un sceptre qui asservit les esprits.",
+    "phrase": "Ouvrir une brèche au-dessus d'une métropole pour y déverser une armée d'invasion, à l'aide d'un sceptre qui asservit les esprits.",
     "explication": "Plan de Loki dans Avengers (2012). Pure fiction (Marvel).",
     "source": "Avengers (Marvel, 2012)",
     "_example": true
@@ -890,7 +890,7 @@
   {
     "id": "fic-038",
     "type": "fiction",
-    "phrase": "Maintenir un ordre social rigide et truqué à bord d'un train parcourant sans fin une planète gelée.",
+    "phrase": "Maintenir un ordre social rigide et truqué à bord d'un train roulant sans fin à travers des terres gelées.",
     "explication": "Société du film Snowpiercer, le Transperceneige (2013). Pure fiction.",
     "source": "Snowpiercer (2013)",
     "_example": true
@@ -986,7 +986,7 @@
   {
     "id": "fic-050",
     "type": "fiction",
-    "phrase": "Voler la Lune après l'avoir réduite à l'aide d'un rayon rétrécisseur.",
+    "phrase": "S'emparer d'un objet colossal après l'avoir réduit à l'aide d'un rayon rétrécisseur.",
     "explication": "Plan de Gru dans Moi, moche et méchant (Despicable Me, 2010). Pure fiction.",
     "source": "Moi, moche et méchant (2010)",
     "_example": true
@@ -1042,7 +1042,7 @@
   {
     "id": "fic-057",
     "type": "fiction",
-    "phrase": "Menacer la planète avec une arme orbitale géante pour exiger une rançon faramineuse.",
+    "phrase": "Menacer le monde entier avec une arme géante pour exiger une rançon faramineuse.",
     "explication": "Plan du Dr Denfer (Dr. Evil) dans Austin Powers (1997). Pure fiction parodique.",
     "source": "Austin Powers (1997)",
     "_example": true
@@ -1066,7 +1066,7 @@
   {
     "id": "fic-060",
     "type": "fiction",
-    "phrase": "Construire une station spatiale de la taille d'une lune, capable de pulvériser une planète entière d'un seul tir.",
+    "phrase": "Bâtir une forteresse mobile gigantesque capable de pulvériser une cible entière d'un seul tir dévastateur.",
     "explication": "L'Étoile de la Mort dans Star Wars (1977). Pure fiction.",
     "source": "Star Wars (1977)",
     "_example": true
@@ -1106,7 +1106,7 @@
   {
     "id": "fic-065",
     "type": "fiction",
-    "phrase": "Capturer en orbite les capsules spatiales de deux superpuissances pour les pousser à se déclarer la guerre.",
+    "phrase": "Faire disparaître en secret les engins de deux superpuissances rivales pour les pousser à se déclarer la guerre.",
     "explication": "Plan de Blofeld dans On ne vit que deux fois (1967). Pure fiction.",
     "source": "On ne vit que deux fois (1967)",
     "_example": true
@@ -1138,7 +1138,7 @@
   {
     "id": "fic-069",
     "type": "fiction",
-    "phrase": "L'ordinateur de bord d'un vaisseau spatial élimine son équipage pour préserver le secret de la mission.",
+    "phrase": "L'ordinateur de bord d'un vaisseau élimine un à un son équipage pour préserver le secret de la mission.",
     "explication": "HAL 9000 dans 2001, l'Odyssée de l'espace (1968). Pure fiction.",
     "source": "2001, l'Odyssée de l'espace (1968)",
     "_example": true
@@ -1178,7 +1178,7 @@
   {
     "id": "fic-074",
     "type": "fiction",
-    "phrase": "Un pilote automatique maintient les humains passifs et à la dérive dans l'espace pour leur éviter tout retour sur Terre.",
+    "phrase": "Un système automatisé maintient les humains passifs et assistés à bord d'un gigantesque vaisseau, pour leur éviter tout retour chez eux.",
     "explication": "Le robot AUTO dans WALL-E (2008). Pure fiction (Pixar).",
     "source": "WALL-E (2008)",
     "_example": true
