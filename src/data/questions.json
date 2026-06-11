@@ -722,7 +722,7 @@
   {
     "id": "fic-017",
     "type": "fiction",
-    "phrase": "Pénétrer les rêves d'une cible à l'aide d'un dispositif partagé pour y implanter une idée qu'elle croira ensuite être la sienne.",
+    "phrase": "S'introduire dans l'esprit d'une cible à l'aide d'un dispositif expérimental pour y implanter une idée qu'elle croira ensuite être la sienne.",
     "explication": "Intrigue du film Inception (2010). Pure fiction.",
     "source": "Inception (2010)",
     "_example": true
@@ -794,7 +794,7 @@
   {
     "id": "fic-026",
     "type": "fiction",
-    "phrase": "Disséminer des nano-robots programmés pour tuer des cibles précises d'après leur ADN.",
+    "phrase": "Disséminer une arme biologique programmée pour ne frapper que des cibles précises identifiées par leur ADN.",
     "explication": "Arme de Lyutsifer Safin dans Mourir peut attendre (No Time to Die, 2021). Pure fiction.",
     "source": "Mourir peut attendre (2021)",
     "_example": true
@@ -802,7 +802,7 @@
   {
     "id": "fic-027",
     "type": "fiction",
-    "phrase": "Ouvrir une brèche au-dessus d'une métropole pour y déverser une armée d'invasion, à l'aide d'un sceptre qui asservit les esprits.",
+    "phrase": "Précipiter une armée d'invasion sur une métropole tout en asservissant des esprits clés à l'aide d'un artefact.",
     "explication": "Plan de Loki dans Avengers (2012). Pure fiction (Marvel).",
     "source": "Avengers (Marvel, 2012)",
     "_example": true
@@ -818,7 +818,7 @@
   {
     "id": "fic-029",
     "type": "fiction",
-    "phrase": "S'emparer du trône d'un royaume détenteur d'un métal rare pour en armer des soulèvements à travers le monde.",
+    "phrase": "S'emparer du pouvoir dans un pays détenteur d'une ressource stratégique unique pour en armer des soulèvements à travers le monde.",
     "explication": "Plan d'Erik Killmonger dans Black Panther (2018). Pure fiction (Marvel).",
     "source": "Black Panther (2018)",
     "_example": true
@@ -850,7 +850,7 @@
   {
     "id": "fic-033",
     "type": "fiction",
-    "phrase": "Mettre en scène de fausses attaques de créatures géantes, à l'aide de drones et d'hologrammes, pour se faire passer pour un sauveur.",
+    "phrase": "Mettre en scène de fausses attaques à l'aide de drones et d'illusions pour se faire passer pour un sauveur providentiel.",
     "explication": "Plan de Mysterio dans Spider-Man: Far From Home (2019). Pure fiction (Marvel).",
     "source": "Spider-Man: Far From Home (2019)",
     "_example": true
@@ -858,7 +858,7 @@
   {
     "id": "fic-034",
     "type": "fiction",
-    "phrase": "Armer secrètement des groupes terroristes tout en bâtissant une armure de combat géante pour éliminer un rival.",
+    "phrase": "Armer secrètement des groupes terroristes tout en développant une arme de pointe pour éliminer un rival.",
     "explication": "Plan d'Obadiah Stane dans Iron Man (2008). Pure fiction (Marvel).",
     "source": "Iron Man (2008)",
     "_example": true
@@ -962,7 +962,7 @@
   {
     "id": "fic-047",
     "type": "fiction",
-    "phrase": "Assembler un dispositif capable d'inverser le cours du temps pour anéantir le présent au profit du futur.",
+    "phrase": "Réunir en secret les composants d'une arme d'un genre inédit, censée pouvoir retourner le temps lui-même.",
     "explication": "Plan d'Andrei Sator dans Tenet (2020). Pure fiction.",
     "source": "Tenet (2020)",
     "_example": true
@@ -978,7 +978,7 @@
   {
     "id": "fic-049",
     "type": "fiction",
-    "phrase": "Après avoir vaincu le héros qui protégeait la ville, en prendre le contrôle total — puis s'ennuyer faute d'adversaire.",
+    "phrase": "Après avoir éliminé la figure qui protégeait la ville, en prendre le contrôle total — puis se lasser faute d'adversaire à sa mesure.",
     "explication": "Plan de Megamind dans le film d'animation du même nom (2010). Pure fiction.",
     "source": "Megamind (2010)",
     "_example": true
@@ -986,7 +986,7 @@
   {
     "id": "fic-050",
     "type": "fiction",
-    "phrase": "S'emparer d'un objet colossal après l'avoir réduit à l'aide d'un rayon rétrécisseur.",
+    "phrase": "S'emparer d'un objet colossal après l'avoir miniaturisé à l'aide d'un dispositif expérimental.",
     "explication": "Plan de Gru dans Moi, moche et méchant (Despicable Me, 2010). Pure fiction.",
     "source": "Moi, moche et méchant (2010)",
     "_example": true
@@ -994,7 +994,7 @@
   {
     "id": "fic-051",
     "type": "fiction",
-    "phrase": "Transformer des êtres vivants en monstres violets indestructibles à l'aide d'un sérum mutagène.",
+    "phrase": "Transformer des êtres vivants en créatures surpuissantes et incontrôlables à l'aide d'un sérum expérimental.",
     "explication": "Plan d'El Macho dans Moi, moche et méchant 2 (2013). Pure fiction.",
     "source": "Moi, moche et méchant 2 (2013)",
     "_example": true
@@ -1002,7 +1002,7 @@
   {
     "id": "fic-052",
     "type": "fiction",
-    "phrase": "Inventer chaque jour une machine farfelue en « -ator » pour dominer une région métropolitaine.",
+    "phrase": "Imaginer chaque jour une nouvelle machine pour prendre le contrôle d'une région entière.",
     "explication": "Les plans du Dr Doofenshmirtz dans la série Phineas et Ferb. Pure fiction.",
     "source": "Phineas et Ferb (série, 2007)",
     "_example": true
@@ -1010,7 +1010,7 @@
   {
     "id": "fic-053",
     "type": "fiction",
-    "phrase": "Une souris de laboratoire surdouée échafaude chaque nuit un nouveau stratagème pour conquérir le monde.",
+    "phrase": "Un sujet de laboratoire au génie hors normes échafaude chaque nuit un nouveau stratagème pour conquérir le monde.",
     "explication": "Minus et Cortex (Pinky and the Brain), série d'animation Warner (1995). Pure fiction.",
     "source": "Minus et Cortex (1995)",
     "_example": true
@@ -1018,7 +1018,7 @@
   {
     "id": "fic-054",
     "type": "fiction",
-    "phrase": "Exploiter industriellement les cris d'enfants effrayés comme source d'énergie, quitte à en enlever.",
+    "phrase": "Capturer des enfants pour exploiter industriellement leur terreur comme une ressource précieuse.",
     "explication": "Complot de Henry Waternoose dans Monstres et Cie (2001). Pure fiction (Pixar).",
     "source": "Monstres et Cie (2001)",
     "_example": true
@@ -1026,7 +1026,7 @@
   {
     "id": "fic-055",
     "type": "fiction",
-    "phrase": "Vendre en secret des armes futuristes puis simuler une attaque de robot géant pour se faire acclamer en héros.",
+    "phrase": "Vendre en secret des armes de pointe puis orchestrer une fausse attaque de grande ampleur pour se faire acclamer en sauveur.",
     "explication": "Plan de Syndrome dans Les Indestructibles (2004). Pure fiction (Pixar).",
     "source": "Les Indestructibles (2004)",
     "_example": true
@@ -1090,7 +1090,7 @@
   {
     "id": "fic-063",
     "type": "fiction",
-    "phrase": "S'injecter un gaz expérimental amplifiant la force avant de terroriser une ville à bord d'un planeur armé.",
+    "phrase": "Tester sur soi un agent expérimental décuplant la force avant de semer la terreur dans une ville.",
     "explication": "Plan du Bouffon Vert dans Spider-Man (2002). Pure fiction (Marvel).",
     "source": "Spider-Man (2002)",
     "_example": true
@@ -1122,7 +1122,7 @@
   {
     "id": "fic-067",
     "type": "fiction",
-    "phrase": "Provoquer un attentat et faire accuser un innocent pour monter les uns contre les autres les membres d'une équipe de héros.",
+    "phrase": "Provoquer un attentat et faire accuser un innocent pour dresser les uns contre les autres les membres d'une même équipe d'élite.",
     "explication": "Plan de Helmut Zemo dans Captain America: Civil War (2016). Pure fiction (Marvel).",
     "source": "Captain America: Civil War (2016)",
     "_example": true
@@ -1146,7 +1146,7 @@
   {
     "id": "fic-070",
     "type": "fiction",
-    "phrase": "Une intelligence artificielle centrale prend le contrôle des robots pour confiner l'humanité « afin de la protéger d'elle-même ».",
+    "phrase": "Une intelligence artificielle centrale prend le contrôle des systèmes automatisés pour confiner l'humanité « afin de la protéger d'elle-même ».",
     "explication": "Le superordinateur VIKI dans I, Robot (2004). Pure fiction.",
     "source": "I, Robot (2004)",
     "_example": true
@@ -1170,7 +1170,7 @@
   {
     "id": "fic-073",
     "type": "fiction",
-    "phrase": "Geler une ville entière à l'aide d'un canon à glace géant pour la tenir en otage.",
+    "phrase": "Paralyser une ville entière en la plongeant dans un froid glacial à l'aide d'une arme expérimentale, pour la tenir en otage.",
     "explication": "Plan de Mr. Freeze dans Batman et Robin (1997). Pure fiction.",
     "source": "Batman et Robin (1997)",
     "_example": true
@@ -1178,7 +1178,7 @@
   {
     "id": "fic-074",
     "type": "fiction",
-    "phrase": "Un système automatisé maintient les humains passifs et assistés à bord d'un gigantesque vaisseau, pour leur éviter tout retour chez eux.",
+    "phrase": "Un système automatisé maintient les humains passifs et assistés au sein d'un vaste habitat clos, pour leur éviter tout retour chez eux.",
     "explication": "Le robot AUTO dans WALL-E (2008). Pure fiction (Pixar).",
     "source": "WALL-E (2008)",
     "_example": true
