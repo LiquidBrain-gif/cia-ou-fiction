@@ -192,6 +192,35 @@ function shuffle(arr) {
   return a;
 }
 
+// Longueur de la plus longue série du même type (CIA ou fiction) dans un ordre.
+function maxRunLength(order) {
+  let best = 0, cur = 0, prev = null;
+  for (const idx of order) {
+    const t = pool[idx].type;
+    if (t === prev) cur++; else { cur = 1; prev = t; }
+    if (cur > best) best = cur;
+  }
+  return best;
+}
+
+// Mélange en limitant les séries : aucune suite de plus de MAX_RUN questions
+// du même type d'affilée (évite les longues séries gênantes, p. ex. 7 CIA de
+// suite en démo). Méthode du rejet : on re-mélange jusqu'à respecter la
+// contrainte (~9 essais en moyenne). Plafond de sécurité MAX_TRIES : si jamais
+// on n'y arrive pas (proba ~2e-10), on garde le meilleur ordre obtenu.
+const MAX_RUN = 5;
+const MAX_TRIES = 200;
+function shuffleNoLongRuns(allIdx) {
+  let best = null, bestRun = Infinity;
+  for (let n = 0; n < MAX_TRIES; n++) {
+    const cand = shuffle(allIdx);
+    const r = maxRunLength(cand);
+    if (r <= MAX_RUN) return cand; // succès : contrainte respectée
+    if (r < bestRun) { best = cand; bestRun = r; }
+  }
+  return best; // repli (quasi impossible) : le meilleur ordre trouvé
+}
+
 // Ordre des questions selon le mode (test ?pick / ?all, sinon mélange complet).
 function buildOrder() {
   const allIdx = pool.map((_, i) => i);
@@ -202,7 +231,7 @@ function buildOrder() {
     if (idx.length) return idx;
   }
   if (testCfg.all) return allIdx; // ordre du fichier, pour relire
-  return shuffle(allIdx);
+  return shuffleNoLongRuns(allIdx);
 }
 
 function newGameState() {
