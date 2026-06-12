@@ -33,9 +33,9 @@ hébergé sur **AWS S3**, provisionné avec **Terraform** et déployé par un
 
 ### b) Les données — `src/data/questions.json`
 - **148 questions** : 74 « CIA » + 74 « fiction » (pool équilibré).
-- **20 opérations CIA réelles** et documentées, chacune avec un lien Wikipédia (FR
-  privilégié).
-- **20 plans fictifs** formulés en style « fiche d'opération » sobre, **sans nom de
+- **74 opérations CIA réelles** et documentées, chacune avec un lien Wikipédia (FR
+  privilégié), **tous revérifiés en HTTP (200)**.
+- **74 plans fictifs** formulés en style « fiche d'opération » sobre, **sans nom de
   film dans la phrase** — pour qu'on puisse les confondre avec de vraies opérations.
 
 ### c) L'infrastructure — Terraform (`infra/`)

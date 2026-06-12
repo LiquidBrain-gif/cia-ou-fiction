@@ -74,9 +74,13 @@ Aucun backend, aucune base de données.
   **vérifiée en HTTP** (FR priorité). Pour en ajouter : vérifier l'existence de la
   page avant de committer ; ne jamais inventer.
 - Schéma : `{ id, type, phrase, explication, source, _example? }`.
-- **20 opérations CIA réelles** (sources Wikipédia, FR privilégié) ; **20 plans
+- **74 opérations CIA réelles** (sources Wikipédia, FR privilégié) ; **74 plans
   fictifs** formulés en style sobre/clinique **sans nom de film dans la phrase**
   (confondables avec du vrai) — l'œuvre n'est révélée que dans `explication`.
+- Les **74 liens Wikipédia ont été revérifiés en HTTP (200)** ; 4 sources ont été
+  recalées vers la bonne page (Rubicon → `Operation_Rubicon`, Silver →
+  `Operation_Silver_(1949)`, Washtub → `WASHTUB_(Nicaragua)`, Doolittle →
+  `Doolittle_Report,_1954`).
 - `_example: true` marque les entrées rédigées par l'IA (à relire par Lucien).
 - ⚠️ Pour toute opération CIA : **fait réel + URL réelle uniquement**, jamais inventé.
 
