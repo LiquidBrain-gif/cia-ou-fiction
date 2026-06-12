@@ -300,7 +300,7 @@
     "type": "cia",
     "phrase": "Détenir secrètement le fabricant des machines à chiffrer vendues à des dizaines de gouvernements, afin de lire leurs communications.",
     "explication": "Opération Rubicon : la CIA et le renseignement allemand ont secrètement possédé l'entreprise suisse Crypto AG, lisant ainsi les messages chiffrés de nombreux États.",
-    "source": "https://fr.wikipedia.org/wiki/Opération_Rubicon",
+    "source": "https://en.wikipedia.org/wiki/Operation_Rubicon",
     "_example": true
   },
   {
@@ -316,7 +316,7 @@
     "type": "cia",
     "phrase": "Creuser un tunnel clandestin pour se brancher sur les lignes téléphoniques d'une représentation ennemie dans une capitale neutre.",
     "explication": "Opération Silver (années 1950) : tunnel CIA/MI6 à Vienne pour intercepter les communications soviétiques, prédécesseur du tunnel de Berlin.",
-    "source": "https://en.wikipedia.org/wiki/Operation_Silver",
+    "source": "https://en.wikipedia.org/wiki/Operation_Silver_(1949)",
     "_example": true
   },
   {
@@ -324,7 +324,7 @@
     "type": "cia",
     "phrase": "Enterrer de fausses caches d'armes « soviétiques » dans un pays d'Amérique centrale pour y « prouver » une ingérence communiste.",
     "explication": "Opération Washtub : la CIA a fait dissimuler de fausses armes soviétiques pour justifier l'action contre le Guatemala dans les années 1950.",
-    "source": "https://fr.wikipedia.org/wiki/Opération_Washtub",
+    "source": "https://fr.wikipedia.org/wiki/Op%C3%A9ration_WASHTUB_(Nicaragua)",
     "_example": true
   },
   {
@@ -490,7 +490,7 @@
   {
     "id": "cia-062",
     "type": "cia",
-    "phrase": "Planifier secrètement, en armant un colonel exilé, le renversement d'un président élu d'Amérique centrale — première mouture avortée.",
+    "phrase": "Planifier secrètement, en armant un colonel exilé, le renversement d'un président guatémaltèque élu démocratiquement.",
     "explication": "Opération PBFortune (1952) : plan initial de la CIA contre le président guatémaltèque Árbenz, précurseur de PBSuccess.",
     "source": "https://fr.wikipedia.org/wiki/Opération_PBFortune",
     "_example": true
@@ -578,7 +578,7 @@
   {
     "id": "cia-073",
     "type": "cia",
-    "phrase": "Implanter une station d'espionnage géante sous couverture pour piloter sabotages et infiltrations contre une île voisine.",
+    "phrase": "Implanter une station d'espionnage géante sous couverture pour piloter des sabotages et des infiltrations contre une île voisine.",
     "explication": "JMWAVE : principale station de la CIA, basée près de Miami, dédiée aux opérations contre Cuba dans les années 1960.",
     "source": "https://en.wikipedia.org/wiki/JMWAVE",
     "_example": true
@@ -588,7 +588,7 @@
     "type": "cia",
     "phrase": "Commander un rapport secret recommandant d'adopter des méthodes de renseignement plus impitoyables, quitte à renoncer aux règles de fair-play.",
     "explication": "Rapport Doolittle (1954) : rapport sur les activités de la CIA préconisant des méthodes clandestines plus agressives face à l'URSS.",
-    "source": "https://en.wikipedia.org/wiki/Doolittle_Report",
+    "source": "https://en.wikipedia.org/wiki/Doolittle_Report,_1954",
     "_example": true
   },
   {
@@ -1018,7 +1018,7 @@
   {
     "id": "fic-054",
     "type": "fiction",
-    "phrase": "Capturer des enfants pour exploiter industriellement leur terreur comme une ressource précieuse.",
+    "phrase": "Capturer des enfants pour exploiter industriellement leur terreur.",
     "explication": "Complot de Henry Waternoose dans Monstres et Cie (2001). Pure fiction (Pixar).",
     "source": "Monstres et Cie (2001)",
     "_example": true
