@@ -318,7 +318,7 @@ function onChoice(given) {
 
   state.answered = given;
   if (isCorrect) state.score++;
-  else state.lives--;
+  else if (!testCfg.enabled) state.lives--; // mode test : relecture sans perdre de vie
   saveState();
 
   updateStatusBar(); // reflète immédiatement la vie perdue / le score gagné
@@ -364,6 +364,7 @@ function onReplay() {
      ?pick=cia-007,fic-003   → ne joue que ces questions (dans cet ordre)
      ?test                   → partie fraîche sans sauvegarde
    Active le mode test : aucune lecture/écriture localStorage + bannière.
+   En mode test, les erreurs ne coûtent pas de vie (relecture complète possible).
    ------------------------------------------------------------------------- */
 function getTestConfig() {
   const p = new URLSearchParams(location.search);

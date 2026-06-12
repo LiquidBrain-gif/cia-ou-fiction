@@ -31,8 +31,8 @@ $listener.Start()
 
 Write-Host ""
 Write-Host "  Jeu servi sur : http://localhost:$port/" -ForegroundColor Green
-Write-Host "  Mode test     : http://localhost:$port/?all=1   (toutes les questions)" -ForegroundColor Cyan
-Write-Host "                  http://localhost:$port/?day=20250    (forcer un jour)" -ForegroundColor Cyan
+Write-Host "  Mode test     : http://localhost:$port/?all=1                (toutes les questions, sans perdre de vie)" -ForegroundColor Cyan
+Write-Host "                  http://localhost:$port/?pick=cia-007,fic-003  (seulement ces questions)" -ForegroundColor Cyan
 Write-Host "  Ctrl + C pour arreter." -ForegroundColor DarkGray
 Write-Host ""
 

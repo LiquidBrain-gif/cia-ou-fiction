@@ -189,6 +189,9 @@ Pour relire/tester les phrases sans déployer :
    | `http://localhost:8000/?all=1` | Joue **toutes les questions** dans l'ordre du fichier (relecture complète) |
    | `http://localhost:8000/?pick=cia-007,fic-003` | Ne joue **que ces questions**, dans cet ordre |
 
+   > En **mode test**, les erreurs ne coûtent **pas de vie** : on peut parcourir
+   > l'intégralité des phrases sans que la partie s'arrête (relecture complète).
+
    Une bannière « 🧪 MODE TEST » s'affiche en haut (raccourcis : toutes / quitter).
    Ces paramètres fonctionnent aussi sur l'URL S3 déployée.
 
